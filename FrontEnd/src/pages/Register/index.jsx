@@ -11,10 +11,10 @@ import logoPegae from "../../assets/logoPegae.png";
 
 export default function Register() {
    return (
-    <div id="container" className=" flex flex-col h-screen w-screen justify-center items-center gap-8 text-blue-950 bg-[#F3F4F6]">
+    <div id="container" className=" flex flex-col h-screen w-screen justify-center items-center gap-8 text-[#1E3A8A] bg-[#F3F4F6]">
         <img className="w-30" src={logoPegae} alt="" />
         <div className="w-80 h-3">
-            <img className="border-2 bg-[#1E3A8A] rounded-lg p-1.5 w-9" src={arrow} alt="" />
+            <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-9" src={arrow} alt="" />
         </div>
         
         <h1 className="font-bold text-2xl w-80 h-2">Criar Conta</h1>
