@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//import Register from "../pages/Register";
+import Register from "../pages/Register";
 import Login from '../pages/Login';
 //import Home from '../pages/Home';
 //import Restaurant from '../pages/Restaurant';
@@ -13,7 +13,7 @@ export function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/cadastro" element={<Register />} /> */}
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<Login />} /> {/* troque depois por home */}
         <Route path="/login" element={<Login />} />
         {/* <Route path="/restaurante/:id" element={<Restaurant />} /> */}

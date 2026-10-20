@@ -3,6 +3,7 @@ import user from "../../assets/icons/user.png";
 import padlock from "../../assets/icons/padlock.png";
 import gmail from "../../assets/icons/gmail.png";
 import { Input } from "../../components/Input";
+import { Button_login_register } from "../../components/Button_login_register";
 
 export default function Login() {
     return (
@@ -19,20 +20,16 @@ export default function Login() {
         placeholder="RA ou E-mail Universitário"
         name="RA_email"
         />
-        {/* <div className="input-group w-80 flex gap-2 border-2 rounded-lg p-1.5">
-          <img src={user} alt="" className="input-icon w-5 h-5" />
-          <input type="text" placeholder="RA ou E-mail Universitário" name="RA_email" className="w-80"/>
-        </div> */}
-
-        <div className="input-group w-80 flex gap-2 border-2 rounded-lg p-1.5">
-          <img src={padlock} alt="icone de cadeado" className="input-icon  w-5 h-5"/>
-          <input type="password" placeholder="Senha" name="password" />
-        </div>
-
-        <button type="submit" className="bg-amber-600 border-0 rounded-3xl p-1.5 w-70 font-bold">Entrar</button>
-
+       
+        <Input iconSrc={padlock}
+        iconAlt="icone de cadeado"
+        type="password" 
+        placeholder="Senha"
+        name="password"
+        />
+        <Button_login_register type="submit" buttonText="Entrar"/> 
       </form>
-
+      
       <div className="esqueceu_senha">
         <p>Esqueceu a senha?</p>
       </div>
