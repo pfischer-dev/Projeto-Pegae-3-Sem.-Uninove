@@ -14,9 +14,8 @@ export function StarRating(rating) {
             <div className="flex gap-0.5">
                 {Array.from({ length: totalStars }).map((_, index) => {
                     const starValue = index + 1; //valor de 1 a 5
-
                     let starImage = starEmpty;
-                    
+    
                     if(starValue <= roundedRate) {
                         starImage = starFull;
                     }
@@ -33,7 +32,6 @@ export function StarRating(rating) {
                     )
                 })}
             </div>
-            
         </div>
     );
 }

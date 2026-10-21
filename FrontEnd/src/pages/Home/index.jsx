@@ -1,6 +1,7 @@
 import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import { Nav } from "../../components/Nav";
-import { Restaurants } from "../../components/Restaurants";
+import { Stores } from "../../components/Stores";
 import { bdRestaurants } from "../../data/bdRestaurants";
 
 
@@ -14,8 +15,9 @@ export default function Home() {
             <div className="flex-1 overflow-y-auto pb-4">
                 {bdRestaurants.map((restaurant) => {
                 return (
-                    <Restaurants 
+                    <Stores 
                     key={restaurant.id}
+                    id={restaurant.id}
                     name={restaurant.name}
                     img={restaurant.image}
                     rating={restaurant.rating}
@@ -23,6 +25,8 @@ export default function Home() {
                 )
             })}
             </div>
+            <Footer />
+            
         </div>
         
     )
