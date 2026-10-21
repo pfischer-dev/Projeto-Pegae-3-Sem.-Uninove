@@ -15,7 +15,7 @@ export const bdRestaurants = [{
         rate: 4.8,
         peopleRating: 120
     },
-    options: ['Salgados', 'Bebidas', 'Pratos Rápidos']
+    options: ['Salgados ', 'Bebidas ', 'Pratos Rápidos ']
     },
     {
     id: "lanchonete_praca",
@@ -27,7 +27,7 @@ export const bdRestaurants = [{
       rate: 4.5,
       peopleRating: 85,
     },
-    options: ["Lanches", "Sorvetes", "Doces"],
+    options: ["Lanches ", "Sorvetes ", "Doces "],
   },
   {
     id: "express_cafe",
@@ -39,7 +39,7 @@ export const bdRestaurants = [{
       rate: 4.7,
       peopleRating: 60,
     },
-    options: ["Café Especial", "Bolos", "Pães de Queijo"],
+    options: ["Café Especial ", "Bolos ", "Pães de Queijo "],
   },
   {
     id: "cantina_grill",
@@ -51,7 +51,7 @@ export const bdRestaurants = [{
       rate: 4.9,
       peopleRating: 210,
     },
-    options: ["Pratos Feitos", "Salgados", "Sucos Naturais"],
+    options: ["Pratos Feitos ", "Salgados ", "Sucos Naturais "],
   },
   {
     id: "acai_fit",
@@ -63,6 +63,6 @@ export const bdRestaurants = [{
       rate: 4.6,
       peopleRating: 94,
     },
-    options: ["Açaí", "Sucos Naturais", "Lanches Natural"],
+    options: ["Açaí ", "Sucos Naturais ", "Lanches Natural "],
   },   
 ]
