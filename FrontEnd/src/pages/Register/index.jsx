@@ -36,9 +36,9 @@ export default function Register() {
             <Input 
             iconSrc={file}
                     iconAlt="Icone file"
-                    type="number" 
-                    placeholder="CPF / RA"
-                    name="cpf_ra"
+                    type="text" 
+                    placeholder="Digite seu CPF"
+                    name="cpf"
             />
 
             <Input 

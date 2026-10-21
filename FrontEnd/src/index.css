@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/* Esconde a barra de rolagem mantendo a função de deslizar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE e Edge */
+  scrollbar-width: none;  /* Firefox */
+}

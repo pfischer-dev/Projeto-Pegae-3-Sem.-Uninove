@@ -17,8 +17,8 @@ export default function Login() {
         <Input iconSrc={user}
         iconAlt="Icone Usuario"
         type="text" 
-        placeholder="RA ou E-mail Universitário"
-        name="RA_email"
+        placeholder="E-mail Universitário"
+        name="email"
         />
        
         <Input iconSrc={padlock}
