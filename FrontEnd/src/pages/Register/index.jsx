@@ -1,5 +1,9 @@
+import { useState } from "react";
+// Se usar axios: import axios from "axios";
+
 import { Input } from "../../components/Input";
 import { Button_login_register } from "../../components/Button_login_register";
+
 /* ICONS */
 import userOutline from "../../assets/icons/userOutline.png";
 import email from "../../assets/icons/email.png";
@@ -10,65 +14,147 @@ import arrow from "../../assets/icons/arrow.png";
 import logoPegae from "../../assets/logoPegae.png";
 
 export default function Register() {
-   return (
-    <div id="container" className=" flex flex-col h-screen w-screen justify-center items-center gap-8 text-[#1E3A8A] bg-[#F3F4F6]">
-        <img className="w-30" src={logoPegae} alt="" />
-        <div className="w-80 h-3">
-            <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-9" src={arrow} alt="" />
-        </div>
-        
-        <h1 className="font-bold text-2xl w-80 h-2">Criar Conta</h1>
-        <form action="#" method="post" className="flex flex-col gap-4 items-center justify-center">
-            <Input iconSrc={userOutline}
-                    iconAlt="Icone Usuario"
-                    type="text" 
-                    placeholder="Nome Completo"
-                    name="nomeCompleto"
-            />
-            <Input 
-            iconSrc={email}
-                    iconAlt="Icone email"
-                    type="email" 
-                    placeholder="E-mail Universitário(@uni9.edu.br"
-                    name="email"
-            />
+  // Estado para armazenar os dados do formulário
+  const [formData, setFormData] = useState({
+    nomeCompleto: "",
+    email: "",
+    cpf_ra: "",
+    telephone: "",
+    password: "",
+    confirmPassword: ""
+  });
 
-            <Input 
-            iconSrc={file}
-                    iconAlt="Icone file"
-                    type="number" 
-                    placeholder="CPF / RA"
-                    name="cpf_ra"
-            />
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-            <Input 
-            iconSrc={telephone}
-                    iconAlt="Icone phonel"
-                    type="tel" 
-                    placeholder="Telefone"
-                    name="telephone"
-            />
+  // Atualiza o estado conforme o usuário digita
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-            <Input 
-            iconSrc={padlockOutline}
-                    iconAlt="Icone cadeado"
-                    type="password" 
-                    placeholder="Senha"
-                    name="password"
-            />
+  // Função disparada ao enviar o formulário
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
 
-            <Input 
-            iconSrc={padlockOutline}
-                    iconAlt="Icone cadeado"
-                    type="password" 
-                    placeholder="Confirmnar Senha"
-                    name="password"
-            />
+    // Validação básica de senha no front
+    if (formData.password !== formData.confirmPassword) {
+      setErrorMessage("As senhas não coincidem!");
+      return;
+    }
 
-            <Button_login_register type="submit" buttonText="Registrar" />
-        </form>
+    setLoading(true);
+
+    try {
+      // Altere a URL para o endereço da sua API / Backend
+      const response = await fetch("http://localhost:3000/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          nomeCompleto: formData.nomeCompleto,
+          email: formData.email,
+          cpf_ra: formData.cpf_ra,
+          telephone: formData.telephone,
+          password: formData.password
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Erro ao realizar o cadastro.");
+      }
+
+      alert("Cadastro realizado com sucesso!");
+      // Opcional: Redirecionar para login ou limpar o formulário
+    } catch (err) {
+      setErrorMessage(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div id="container" className="flex flex-col h-screen w-screen justify-center items-center gap-8 text-[#1E3A8A] bg-[#F3F4F6]">
+      <img className="w-30" src={logoPegae} alt="Logo Pegae" />
+      <div className="w-80 h-3">
+        <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-9" src={arrow} alt="Voltar" />
+      </div>
+
+      <h1 className="font-bold text-2xl w-80 h-2">Criar Conta</h1>
+
+      {errorMessage && (
+        <p className="text-red-500 text-sm font-semibold">{errorMessage}</p>
+      )}
+
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 items-center justify-center">
+        <Input
+          iconSrc={userOutline}
+          iconAlt="Icone Usuario"
+          type="text"
+          placeholder="Nome Completo"
+          name="nomeCompleto"
+          value={formData.nomeCompleto}
+          onChange={handleChange}
+        />
+        <Input
+          iconSrc={email}
+          iconAlt="Icone email"
+          type="email"
+          placeholder="E-mail Universitário (@uni9.edu.br)"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <Input
+          iconSrc={file}
+          iconAlt="Icone file"
+          type="text"
+          placeholder="CPF / RA"
+          name="cpf_ra"
+          value={formData.cpf_ra}
+          onChange={handleChange}
+        />
+        <Input
+          iconSrc={telephone}
+          iconAlt="Icone phone"
+          type="tel"
+          placeholder="Telefone"
+          name="telephone"
+          value={formData.telephone}
+          onChange={handleChange}
+        />
+        <Input
+          iconSrc={padlockOutline}
+          iconAlt="Icone cadeado"
+          type="password"
+          placeholder="Senha"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        <Input
+          iconSrc={padlockOutline}
+          iconAlt="Icone cadeado"
+          type="password"
+          placeholder="Confirmar Senha"
+          name="confirmPassword"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+        />
+
+        <Button_login_register
+          type="submit"
+          buttonText={loading ? "Cadastrando..." : "Registrar"}
+          disabled={loading}
+        />
+      </form>
     </div>
-    
-
-   ) 
+  );
 }
