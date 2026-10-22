@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import { testarConexao, cadastrarUsuario, validarUsuario } from '../controller/authController.js';
+import { cadastrarUsuario, testarConexao, validarUsuario } from '../controller/userController.js';
+import { autenticarUsuario } from '../controller/authController.js';
 
 const router = Router();
 
-router.get('/teste-db', testarConexao);
-router.post('/cadastro', cadastrarUsuario);
-router.post('/validar', validarUsuario);
+router.get('/testar-conexao', testarConexao);
+router.post('/register', cadastrarUsuario);
+router.post('/validar-usuario', validarUsuario);
+router.post('/login', autenticarUsuario);
 
 export default router;

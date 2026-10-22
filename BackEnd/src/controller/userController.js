@@ -6,19 +6,6 @@ export const testarConexao = async (req, res) => {
     return res.json({ mensagem: 'Banco conectado!', horaNoBanco: rows[0].now });
   } catch (error) {
     console.error('Erro na conexão:', error);
-    return res.status(500).json({ mensagem: 'Erro ao conectar no banco' });
-  }
-};
-
-
-
-export const testarConexao = async (req, res) => {
-  try {
-    const { rows } = await pool.query('SELECT NOW()');
-    return res.json({ mensagem: 'Banco conectado!', horaNoBanco: rows[0].now });
-  } catch (error) {
-    console.error('Erro na conexão:', error);
-    // Retorna a mensagem de erro exata do Postgres para facilitar o diagnóstico
     return res.status(500).json({ 
       mensagem: 'Erro ao conectar no banco.', 
       detalhe: error.message 
@@ -26,35 +13,40 @@ export const testarConexao = async (req, res) => {
   }
 };
 
-
-
-
-
 export const cadastrarUsuario = async (req, res) => {
-  const { nome, email, senha } = req.body;
+  const nome = req.body.nomeCompleto;
+  const email = req.body.email;
+  const cpf_ra = req.body.cpf_ra || null;
+  const telefone = req.body.telephone || null;
+  const senha = req.body.password;
 
   if (!nome || !email || !senha) {
-    return res.status(400).json({ mensagem: 'Preencha todos os campos.' });
+    return res.status(400).json({ mensagem: 'Preencha todos os campos obrigatórios.' });
   }
 
   try {
     const query = `
-      INSERT INTO usuarios (nome, email, senha) 
-      VALUES ($1, $2, $3) 
-      RETURNING id, nome, email, criado_em
+      INSERT INTO usuarios (nome, email, cpf_ra, telefone, senha) 
+      VALUES ($1, $2, $3, $4, $5) 
+      RETURNING id, nome, email, cpf_ra, telefone
     `;
-    const { rows } = await pool.query(query, [nome, email, senha]);
+    const { rows } = await pool.query(query, [nome, email, cpf_ra, telefone, senha]);
 
     return res.status(201).json({
       mensagem: 'Usuário inserido com sucesso!',
       usuario: rows[0]
     });
   } catch (error) {
+    console.error('ERRO DETALHADO DO POSTGRES:', error.message);
+
     if (error.code === '23505') {
-      return res.status(400).json({ mensagem: 'E-mail já cadastrado.' });
+      return res.status(400).json({ mensagem: 'E-mail, CPF/RA ou telefone já cadastrado.' });
     }
-    console.error(error);
-    return res.status(500).json({ mensagem: 'Erro interno no servidor.' });
+
+    return res.status(500).json({ 
+      mensagem: 'Erro interno no servidor.', 
+      detalhe: error.message 
+    });
   }
 };
 

@@ -1,6 +1,4 @@
 import { useState } from "react";
-// Se usar axios: import axios from "axios";
-
 import { Input } from "../../components/Input";
 import { Button_login_register } from "../../components/Button_login_register";
 
@@ -14,7 +12,6 @@ import arrow from "../../assets/icons/arrow.png";
 import logoPegae from "../../assets/logoPegae.png";
 
 export default function Register() {
-  // Estado para armazenar os dados do formulário
   const [formData, setFormData] = useState({
     nomeCompleto: "",
     email: "",
@@ -27,7 +24,6 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Atualiza o estado conforme o usuário digita
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -36,12 +32,12 @@ export default function Register() {
     }));
   };
 
-  // Função disparada ao enviar o formulário
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
 
-    // Validação básica de senha no front
+    console.log("Dados do formulário enviados:", formData);
+
     if (formData.password !== formData.confirmPassword) {
       setErrorMessage("As senhas não coincidem!");
       return;
@@ -50,8 +46,7 @@ export default function Register() {
     setLoading(true);
 
     try {
-      // Altere a URL para o endereço da sua API / Backend
-      const response = await fetch("http://localhost:3000/api/register", {
+      const response = await fetch("http://localhost:3001/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -68,12 +63,21 @@ export default function Register() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Erro ao realizar o cadastro.");
+        throw new Error(data.mensagem || data.message || "Erro ao realizar o cadastro.");
       }
 
       alert("Cadastro realizado com sucesso!");
-      // Opcional: Redirecionar para login ou limpar o formulário
+      
+      setFormData({
+        nomeCompleto: "",
+        email: "",
+        cpf_ra: "",
+        telephone: "",
+        password: "",
+        confirmPassword: ""
+      });
     } catch (err) {
+      console.error("Erro no cadastro:", err);
       setErrorMessage(err.message);
     } finally {
       setLoading(false);
@@ -84,7 +88,7 @@ export default function Register() {
     <div id="container" className="flex flex-col h-screen w-screen justify-center items-center gap-8 text-[#1E3A8A] bg-[#F3F4F6]">
       <img className="w-30" src={logoPegae} alt="Logo Pegae" />
       <div className="w-80 h-3">
-        <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-9" src={arrow} alt="Voltar" />
+        <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-9 cursor-pointer" src={arrow} alt="Voltar" />
       </div>
 
       <h1 className="font-bold text-2xl w-80 h-2">Criar Conta</h1>
@@ -107,7 +111,7 @@ export default function Register() {
           iconSrc={email}
           iconAlt="Icone email"
           type="email"
-          placeholder="E-mail Universitário (@uni9.edu.br)"
+          placeholder="E-mail Universitário(@uni9.edu.br)"
           name="email"
           value={formData.email}
           onChange={handleChange}
