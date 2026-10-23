@@ -13,8 +13,8 @@ export default function Register() {
    return (
     <div id="container" className=" flex flex-col h-screen w-screen justify-center items-center gap-8 text-[#1E3A8A] bg-[#F3F4F6]">
         <img className="w-30" src={logoPegae} alt="" />
-        <div className="w-80 h-3">
-            <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-9" src={arrow} alt="" />
+        <div className="w-80 flex flex-col justify-center ">
+            <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-7" src={arrow} alt="" />
         </div>
         
         <h1 className="font-bold text-2xl w-80 h-2">Criar Conta</h1>
@@ -29,7 +29,7 @@ export default function Register() {
             iconSrc={email}
                     iconAlt="Icone email"
                     type="email" 
-                    placeholder="E-mail Universitário(@uni9.edu.br"
+                    placeholder="emailUniversitario@uni9.edu.br"
                     name="email"
             />
 
@@ -61,14 +61,12 @@ export default function Register() {
             iconSrc={padlockOutline}
                     iconAlt="Icone cadeado"
                     type="password" 
-                    placeholder="Confirmnar Senha"
+                    placeholder="Confirmar Senha"
                     name="password"
             />
 
             <Button_login_register type="submit" buttonText="Registrar" />
         </form>
     </div>
-    
-
    ) 
 }

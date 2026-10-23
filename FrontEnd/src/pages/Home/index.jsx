@@ -4,29 +4,34 @@ import { Nav } from "../../components/Nav";
 import { Stores } from "../../components/Stores";
 import { bdRestaurants } from "../../data/bdRestaurants";
 
-
 export default function Home() {
     return (
-        <div className="container w-full max-w-md mx-auto h-screen flex flex-col overflow-x-hidden bg-[#EFF6FF]">
-            <div className="flex-shrink-0">
-                <Header />
-                <Nav />
-            </div>
-            <div className="flex-1 overflow-y-auto pb-4">
-                {bdRestaurants.map((restaurant) => {
-                return (
-                    <Stores 
-                    key={restaurant.id}
-                    id={restaurant.id}
-                    name={restaurant.name}
-                    img={restaurant.image}
-                    rating={restaurant.rating}
-                    options={restaurant.options} />
-                )
-            })}
-            </div>
-            <Footer />
+        <div className="min-h-screen w-full bg-[#F3F4F6]">
             
+            <div className="min-h-dvh w-full max-w-2xl mx-auto flex flex-col overflow-x-hidden bg-[#EFF6FF] shadow-sm">
+           
+                <header className="flex-shrink-0">
+                    <Header />
+                    <Nav />
+                </header>   
+            
+                <main className="flex-1 min-h-0 overflow-y-auto bg-[#F3F4F6] pb-4">
+                    <div className="w-full flex flex-col pb-10">
+                        {bdRestaurants.map((restaurant) => (
+                        <Stores 
+                        key={restaurant.id}
+                        id={restaurant.id}
+                        name={restaurant.name}
+                        img={restaurant.image}
+                        rating={restaurant.rating}
+                        options={restaurant.options} />
+                    ))}
+                    </div>
+                </main>
+                <footer className="flex-shrink-0 w-full">
+                    <Footer />
+                </footer>
+            </div>
         </div>
         
     )
