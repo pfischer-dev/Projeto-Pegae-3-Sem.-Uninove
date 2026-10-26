@@ -30,7 +30,7 @@ export default function RestaurantPage() {
                 <header className="flex-shrink-0">
                     <HeaderNav name={restaurant?.name}/>
 
-                    <div className="flex flex-col gap-3 px-1">
+                    <div className="w-full pt-3">
                         <Stores 
                             key={restaurant.id}
                             id={restaurant.id}
@@ -39,7 +39,7 @@ export default function RestaurantPage() {
                             rating={restaurant.rating}
                             options={restaurant.options} 
                         />
-                        <div className="flex justify-center">
+                        <div className="w-full px-4 mt-3">
                             <Input 
                                 iconSrc={search} 
                                 iconAlt="icone localizaçao" 
@@ -49,11 +49,14 @@ export default function RestaurantPage() {
                             />
                         </div>
                         
+                        <div className="w-full mt-3">
+                            <Keywords
+                                category={category}
+                                setCategory={setCategory}
+                            />
+                        </div>
 
-                        <Keywords
-                        category={category}
-                        setCategory={setCategory}
-                         />
+                        
                     </div>
                     
                 </header>
