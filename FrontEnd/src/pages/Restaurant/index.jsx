@@ -14,10 +14,18 @@ export default function RestaurantPage() {
     const restaurant = bdRestaurants.find((item) => String(item.id) === id);
     const [ category, setCategory ] = useState("all");
     
+    const products =
+        category === "all" ?
+        [
+            ...restaurant.menu.foods,
+            ...restaurant.menu.drinks,
+            ...restaurant.menu.candys
+        ] : restaurant.menu[category] ?? [];
+
     return (
         <div className="min-h-screen w-full bg-[#F3F4F6]">
             
-            <div className="min-h-dvh w-full max-w-2xl mx-auto flex flex-col overflow-x-hidden bg-[#EFF6FF] shadow-sm">
+            <div className="min-h-dvh w-full max-w-2xl mx-auto flex flex-col overflow-x-hidden bg-[#F3F4F6] shadow-sm">
                 
                 <header className="flex-shrink-0">
                     <HeaderNav name={restaurant?.name}/>
@@ -42,7 +50,10 @@ export default function RestaurantPage() {
                         </div>
                         
 
-                        <Keywords />
+                        <Keywords
+                        category={category}
+                        setCategory={setCategory}
+                         />
                     </div>
                     
                 </header>
@@ -50,7 +61,7 @@ export default function RestaurantPage() {
                 <main className="flex-1 min-h-0 overflow-y-auto bg-[#F3F4F6] pb-4">
                     <div className="w-full flex flex-col pb-10">
                         
-                        {restaurant.menu.foods.map((product) => (
+                        {products.map((product) => (
                             <Product 
                                 key={product.id}
                                 name={product.name}

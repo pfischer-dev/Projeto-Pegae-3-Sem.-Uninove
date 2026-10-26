@@ -16,15 +16,20 @@ export function HeaderNav(props) {
                         className="w-6 h-6 object-contain bg-[#1e3a8a] rounded-lg p-1" />
                 </Link>
                 <h2 className="flex-1 min-w-0 text-center font-bold truncate">
-                    {props.name}
+                    {props.name}    
                 </h2>
 
+                <Link 
+                to="/" /* mudar depois para a rota de notificacoes */ 
+                aria-label="notificaticações"
+                className="flex-shrink-0">
                 <button type="button" aria-label="Notificações" className="flex-shrink-0">
                     <img src={notification_signal_active}
                         alt="botão notificaçoes"
                         className="w-6" 
                     />
                 </button>
+                </Link>
             </div> 
         </header>
     )

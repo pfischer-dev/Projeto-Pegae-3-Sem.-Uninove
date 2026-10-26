@@ -546,7 +546,7 @@ export const productImageUrls = {
     "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600",
 
   "Limonada Suíça":
-    "https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?w=600",
+    "https://images.unsplash.com/photo-1656936637945-571e3f0893f9?w=600",
 
   "Chá Gelado de Pêssego":
     "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600",
@@ -561,7 +561,7 @@ export const productImageUrls = {
     "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
 
   "Chocolate Quente":
-    "https://images.unsplash.com/photo-1542990253-0b8be3e9dc4b?w=600",
+    "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=600",
 
   "Mocha Gelado":
     "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
@@ -572,8 +572,8 @@ export const productImageUrls = {
   "Suco Natural de Maracujá":
     "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600",
 
-  "Limonada Natural":
-    "https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?w=600",
+"Limonada Natural":
+    "https://images.unsplash.com/photo-1656936637945-571e3f0893f9?w=600",
 
   "Chá-Mate Gelado":
     "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600",
@@ -592,7 +592,7 @@ export const productImageUrls = {
 
   // DOCES
   "Brigadeiro Gourmet":
-    "https://images.unsplash.com/photo-1548907040-4d42bfc4c5a8?w=600",
+    "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600",
 
   "Brownie de Chocolate":
     "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
@@ -649,7 +649,7 @@ export const productImageUrls = {
     "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600",
 
   "Trufa de Cacau":
-    "https://images.unsplash.com/photo-1548907040-4d42bfc4c5a8?w=600",
+    "https://images.unsplash.com/photo-1775201630951-665651af1747?w=600",
 };
 
 // Adiciona a propriedade image aos 60 produtos.
