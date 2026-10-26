@@ -20,7 +20,7 @@ export function Stores(props) {
                     <div id="description_restaurant" 
                     className="flex flex-col flex-1 min-w-0 justify-center items-start gap-1"
                     >
-                        <p className="text-xs sm:text-sm text-gray-600">
+                        <p className="text-xs sm:text-sm text-gray-600 bg-emerald-300/20 border-1 border-emerald-700/50 rounded-2xl px-1.5 py-0.5">
                             Aberta - Retirada - 5min
                         </p>
 

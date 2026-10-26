@@ -13,9 +13,9 @@ export default function Login() {
         <div className="w-full max-w-md flex flex-col items-center gap-8 bg-[#F3F4F6]">
           
           {/*VERSAO ORIGINAL CRIADO POR MIM container flex flex-col h-screen w-screen justify-center items-center gap-9 text-blue-950 bg-[#F3F4F6] */}
-          <div className="logoLogin flex justify-center">
+          <div className="logoLogin flex flex-col justify-center">
             <img src={logoPegae} alt="logo marca da Pegaê" className="w-48 sm:w-52 h-auto"/>
-            {/* w-48 h-auto */}
+            <h3>Peça seu lanche e retire sem filas</h3>
           </div>
       
           <form action="#" method="post" className="w-full flex flex-col items-center gap-4">
@@ -49,9 +49,9 @@ export default function Login() {
           </Link>
           
           <div className="w-full flex flex-col items-center gap-4">
-            {/* flex flex-col gap-2 justify-center items-center */}
+            
             <div className="register w-70 flex flex-wrap items-center justify-center gap-1 border-2 border-blue-950 p-3 rounded-md">
-              {/* register flex gap-1 border-2 border-b-blue-950 p-2 rounded-md w-70 justify-center-safe */}
+              
               <p>Não tem conta?</p>
               
               <Link to={'/register'}>
