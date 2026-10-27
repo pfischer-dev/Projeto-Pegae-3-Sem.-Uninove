@@ -21,7 +21,7 @@ export default function RestaurantPage() {
             ...restaurant.menu.drinks,
             ...restaurant.menu.candys
         ] : restaurant.menu[category] ?? [];
-
+        
     return (
         <div className="min-h-screen w-full bg-[#F3F4F6]">
             
@@ -56,7 +56,6 @@ export default function RestaurantPage() {
                             />
                         </div>
 
-                        
                     </div>
                     
                 </header>
@@ -67,10 +66,12 @@ export default function RestaurantPage() {
                         {products.map((product) => (
                             <Product 
                                 key={product.id}
+                                id={product.id}
                                 name={product.name}
                                 image={product.image}
                                 description={product.description}
                                 value={product.value}
+                                restaurant={restaurant}
                             />
                         ))}
                         
