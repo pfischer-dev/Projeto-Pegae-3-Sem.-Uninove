@@ -2,12 +2,14 @@ import logoPegae from "../assets/logoPegae.png";
 
 export function Header() {
     return (
-        <div className="container w-full h-13 bg-[#F3F4F6] flex justify-center items-center">
+        
+        <header className="w-full bg-white border-b border-gray-200 flex justify-center items-center py-1 px-4">
+            
             <img 
             src={logoPegae} 
             alt="logo Pegae" 
-            className="w-20 h-10"
+            className="w-20 h-auto"
             />
-        </div>
+        </header>
     )
 }
