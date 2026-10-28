@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/Input";
 import { Button_login_register } from "../../components/Button_login_register";
 
-/* ICONS & ASSETS */
+/* ICONS */
 import logoPegae from "../../assets/logoPegae.png";
 import user from "../../assets/icons/user.png";
 import padlock from "../../assets/icons/padlock.png";
@@ -12,7 +12,6 @@ import gmail from "../../assets/icons/gmail.png";
 export default function Login() {
   const navigate = useNavigate();
 
-  // 1. Estado local para capturar o formulário
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -21,7 +20,6 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // 2. Manipulador genérico para os inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -30,7 +28,6 @@ export default function Login() {
     }));
   };
 
-  // 3. Função de envio da requisição ao Backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage("");
@@ -60,12 +57,10 @@ export default function Login() {
         throw new Error(data.mensagem || data.message || "E-mail ou senha incorretos.");
       }
 
-      // Opcional: salvar dados do usuário logado (ex: localStorage)
       localStorage.setItem("usuario", JSON.stringify(data.usuario));
 
       alert(`Bem-vindo(a), ${data.usuario.nome}!`);
 
-      // Redireciona para a tela inicial / dashboard após o login
       navigate("/"); 
 
     } catch (err) {
