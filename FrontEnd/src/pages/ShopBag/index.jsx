@@ -4,6 +4,7 @@ import { Button_login_register } from "../../components/Button_login_register";
 import { Footer } from "../../components/Footer";
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import { bdRestaurants } from "../../data/bdRestaurants";
 
 export default function ShopBag() {
     const { items, changeQuantity, totalValue } = useCart();
@@ -19,13 +20,18 @@ export default function ShopBag() {
             <main className="flex flex-col justify-center gap-2 items-center pb-14">
                 {items.map((item) => (
                     <ShopItem key={item.id} item={item} />
+                    
                 ))}
-
-
+                
                 <div id="shopDetail" className="w-90 bg-white border-[#1e3A8a] text-gray-600">
-                    <div className="flex justify-between p-2 border-1 border-[#1e3A8a] rounded-t-2xl">
+                    <div className="flex justify-between items-center p-2 border-1 border-[#1e3A8a] rounded-t-2xl">
                         <p>Retirada</p>
-                        <h3 className="font-bold">Balcão - Bloco A</h3>
+                        <h3 
+                        className="font-bold text-[14px] flex-wrap">
+                            { items.length > 0
+                                ? items[0]?.restaurantName
+                                : ""
+                            }</h3>
                     </div>
                     <div className="flex justify-between p-2 border-l-1 border-r-1">
                         <div className="flex flex-col">

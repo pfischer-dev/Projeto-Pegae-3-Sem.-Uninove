@@ -12,7 +12,8 @@ export const profile = [
         email: "gabrielPpimentel@email.edu.br",
         curso: "Análise e Desenvolvimento de Sistemas",
         campus: "Memorial",
-        password: {
+        isConnect: false,
+            password: {
             senhaAtual: "123456",
             novaSenha: []
         }
@@ -24,6 +25,7 @@ export const profile = [
         email: "diegorenan@email.edu.br",
         curso: "Banco de Dados",
         campus: "Memorial",
+        isConnect: false,
         password: {
             senhaAtual: "123456",
             novaSenha: []
@@ -36,6 +38,7 @@ export const profile = [
         email: "sofiaLula@email.edu.br",
         curso: "Medicina",
         campus: "Memorial",
+        isConnect: false,
         password: {
             senhaAtual: "123456",
             novaSenha: []
@@ -48,6 +51,7 @@ export const profile = [
         email: "henriqueD@email.edu.br",
         curso: "Psicologia",
         campus: "Memorial",
+        isConnect: false,
         password: {
             senhaAtual: "123456",
             novaSenha: []

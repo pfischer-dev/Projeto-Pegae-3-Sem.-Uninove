@@ -1,5 +1,7 @@
 import { HeaderNav } from "../../components/HeaderNav";
 import { CardProfile } from "../../components/CardProfile";
+import { Last_Orders } from "../../components/Last_Orders";
+import { Footer } from "../../components/Footer"
 import { profile } from "../../data/bdProfile";
 
 
@@ -15,10 +17,18 @@ export default function Profile() {
             </div>
 
             <main className="flex flex-col justify-center gap-2 items-center gap-4">
-                <div Id="cardProfile">
+                <div id="cardProfile">
                     <CardProfile usuario={ usuario } />
                 </div>
+                <div>
+                    <Last_Orders />
+                    
+                </div>
             </main>
+
+            <footer className="flex-shrink-0 w-full">
+                <Footer />
+            </footer>
         </div>
     );
 }

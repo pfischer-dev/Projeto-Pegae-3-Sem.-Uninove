@@ -45,7 +45,7 @@ export default function Payment() {
                 </div>
 
                 <div id="qr_code_payment" className="flex justify-center gap-2 w-90 border-1 rounded-xl p-2 pl-1 text-[#1e3a8a]">
-                        <img src={qrCode_blue} alt="image qrCode" className="w-20 h-20" />
+                        
                     <div className="flex flex-col">
                         <h4 className="font-bold">Pix Simulado</h4>
                         <p className="font-extralight text-xs">O pedido será Aprovado Automaticamente</p>

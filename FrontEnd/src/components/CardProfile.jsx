@@ -5,9 +5,9 @@ export function CardProfile({usuario}) {
     
     return (
         <div id="container" className="w-full flex justify-center gap-2">
-            <div id="cardProfile" className="w-90 flex flex-col items-center gap-2 p-3 bg-[#1e3a8a] rounded-xl">
+            <div id="cardProfile" className="w-90 flex flex-col items-center gap-2 p-5 bg-[#1e3a8a] rounded-xl">
                 <div id="imageProfile" className="w-20 h-20 rounded-full bg-white flex justify-center items-center">
-                    <img src={avatarProfile} alt="foto perfil" className="w-18 h-18" />
+                    <img src={usuario.image} alt="foto perfil" className="w-18 h-18 rounded-full" />
                 </div>
                 
                 
@@ -28,7 +28,6 @@ export function CardProfile({usuario}) {
                     </div>
                 </div>
             </div>
-            
         </div>
     )
 }
