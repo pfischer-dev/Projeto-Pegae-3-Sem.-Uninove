@@ -37,8 +37,6 @@ export function Nav() {
                     />
                 </div>
             </div>
-            
-            <Keywords />
         </div>
     );
 }

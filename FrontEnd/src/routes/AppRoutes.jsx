@@ -6,8 +6,9 @@ import Home from '../pages/Home';
 import Restaurant from '../pages/Restaurant';
 //import ProductDetail from '../pages/ProductDetail';
 import ShopBag from '../pages/ShopBag';
-//import Payment from '../pages/Payment';
+import Payment from '../pages/Payment';
 //import QRCodePickup from '../pages/QRCodePickup';
+import Profile from '../pages/Profile';
 
 export function AppRoutes() {
   return (
@@ -19,8 +20,9 @@ export function AppRoutes() {
         <Route path="/restaurant/:id" element={<Restaurant />} />
         {/* <Route path="/produto/:id" element={<ProductDetail />} /> */}
         <Route path="/shopbag" element={<ShopBag />} />
-        {/* <Route path="/pagamento" element={<Payment />} /> */}
+        <Route path="/payment" element={<Payment />} />
         {/* <Route path="/pedido/:id/retirada" element={<QRCodePickup />} /> */}
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

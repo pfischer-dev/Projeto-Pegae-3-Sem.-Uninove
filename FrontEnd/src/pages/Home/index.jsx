@@ -15,7 +15,7 @@ export default function Home() {
                     <Nav />
                 </header>   
             
-                <main className="flex-1 min-h-0 overflow-y-auto bg-[#F3F4F6] pb-4">
+                <main className="flex-1 min-h-0 overflow-y-auto bg-[#F3F4F6] pb-6">
                     <div className="w-full flex flex-col pb-10">
                         {bdRestaurants.map((restaurant) => (
                         <Stores 

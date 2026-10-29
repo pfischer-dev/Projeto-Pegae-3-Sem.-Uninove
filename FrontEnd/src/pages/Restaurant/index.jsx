@@ -61,7 +61,7 @@ export default function RestaurantPage() {
                 </header>
 
                 <main className="flex-1 min-h-0 overflow-y-auto bg-[#F3F4F6] pb-4">
-                    <div className="w-full flex flex-col pb-10">
+                    <div className="w-full flex flex-col pb-8">
                         
                         {products.map((product) => (
                             <Product 

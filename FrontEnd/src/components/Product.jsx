@@ -31,7 +31,7 @@ export function Product(props) {
                             onClick={() => addToCart(product, props.restaurant)}
                             className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
                         >
-                            <span className="text-base leading-none relative -top-[1.5px]">
+                            <span className="text-base leading-none relative -top-[1.5px] cursor-pointer">
                                 +
                             </span>
                         </button>

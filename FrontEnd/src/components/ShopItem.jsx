@@ -18,21 +18,21 @@ export function ShopItem({ item }) {
 
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 justify-center items-center">
                 <button
                     className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
                     onClick={() => changeQuantity(item.id, -1)}
                 >
-                    <span className="relative -top-[2px] text-base leading-none">−</span>
+                    <span className="relative -top-[2px] text-base leading-none cursor-pointer">−</span>
                 </button>
 
-                <span>{item.quantity}</span>
+                <span className="text-xs     font-bold">{item.quantity}</span>
 
                 <button
                     className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
                     onClick={() => changeQuantity(item.id, 1)}
                 >
-                    <span className="relative -top-[2px] text-base leading-none">+</span>
+                    <span className="relative -top-[2px] text-base leading-none cursor-pointer">+</span>
                 </button>
             </div>
         </div>

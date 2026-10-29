@@ -13,7 +13,7 @@ export function Keywords({ category, setCategory}) {
                 key={key.label}
                 type="button" 
                 onClick={() => setCategory(key.value) } 
-                className={`flex-shrink-0 border rounded-4xl px-3 py-1 text-sm ${
+                className={`flex-shrink-0 border rounded-4xl px-3 py-1 cursor-pointer text-sm ${
                         category === key.value
                             ? "bg-amber-600 text-white"
                             : "border-[#1E3A8A] text-[#1E3A8A]"
