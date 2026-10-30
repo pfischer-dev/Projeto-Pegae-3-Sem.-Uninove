@@ -1,4 +1,11 @@
+@import url('https://googleapis.com');
+
 @import "tailwindcss";
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --font-mono: "Inconsolata", monospace;
+}
 
 /* Esconde a barra de rolagem mantendo a função de deslizar */
 .no-scrollbar::-webkit-scrollbar {

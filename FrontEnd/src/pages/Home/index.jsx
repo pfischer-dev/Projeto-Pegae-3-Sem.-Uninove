@@ -6,7 +6,7 @@ import { bdRestaurants } from "../../data/bdRestaurants";
 
 export default function Home() {
     return (
-        <div className="min-h-screen w-full bg-[#F3F4F6]">
+        <div className="min-h-screen w-full bg-white">
             
             <div className="min-h-dvh w-full max-w-2xl mx-auto flex flex-col overflow-x-hidden bg-[#EFF6FF] shadow-sm">
            

@@ -3,7 +3,7 @@ import { useCart } from "../context/CartContext";
 export function ShopItem({ item }) {
     const { changeQuantity } = useCart();
     return (
-        <div className="w-90 flex gap-2 items-center justify-between p-2 bg-white border-1 border-[#1e3A8a] text-gray-600 rounded-2xl">
+        <div className="w-90 flex gap-2 items-center justify-between p-2 bg-white border-1 border-[#1e3A8a]/70 text-gray-600/60 rounded-2xl">
             <div className="flex items-center gap-2">
                 <img src={item.image} alt={item.name} className="w-20 h-20 rounded-2xl object-cover flex-shrink-0" />
 

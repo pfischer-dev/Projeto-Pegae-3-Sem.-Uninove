@@ -1,5 +1,7 @@
 import { OrderCard } from "./OrderCard"; 
 import shopBagOrange from "../assets/icons/shopBag-orange.png";
+
+
 export function Last_Orders() {
     return (
         <div id="container" className="border-1 rounded-xl border-[#1e3a8a]/40 w-90 p-4 flex flex-col gap-2 ">
@@ -13,17 +15,19 @@ export function Last_Orders() {
                     3 Pedidos
                 </span>
             </div>
-
+            
             <OrderCard
                 order_num="Pedido #184"
                 time_Order="Hoje, 12:40 PM"
                 status="Preparando"
+                
             />
 
             <OrderCard
                 order_num="Pedido #179"
                 time_Order="Hoje, 12:40 PM"
                 status="Retirado"
+                
             />
 
             <OrderCard

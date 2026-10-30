@@ -23,7 +23,7 @@ export default function RestaurantPage() {
         ] : restaurant.menu[category] ?? [];
         
     return (
-        <div className="min-h-screen w-full bg-[#F3F4F6]">
+        <div className="min-h-screen w-full bg-white">
             
             <div className="min-h-dvh w-full max-w-2xl mx-auto flex flex-col overflow-x-hidden bg-[#F3F4F6] shadow-sm">
                 
