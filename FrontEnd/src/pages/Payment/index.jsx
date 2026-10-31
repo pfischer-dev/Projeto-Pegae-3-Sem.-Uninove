@@ -47,9 +47,10 @@ export default function Payment() {
         
         setTimeLeft(30);
         setPaymentStatus('pending');
-
+        console.log(novoTimeStamp);
     }
-
+    
+    
     return (
         <div id="container" className="min-h-screen w-full bg-white">
 
@@ -94,14 +95,10 @@ export default function Payment() {
                             />
                         )}
 
-
                         <div id="total" className="w-85 flex flex-col justify-start text-[#1e3a8a]">
                             <p className="font-light text-m">Total</p>
                             <h3 className="font-bold">R$ {totalValue.toFixed(2)}</h3>
                         </div>
-
-
-
 
                     </div>
                 </main>

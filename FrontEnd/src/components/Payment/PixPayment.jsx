@@ -1,3 +1,4 @@
+/* Component que abre janela de COPIAR o CODIGO PIX */
 import { useState } from "react";
 import copyButton from "../../assets/icons/copy.png";
 import information from "../../assets/icons/information.png";

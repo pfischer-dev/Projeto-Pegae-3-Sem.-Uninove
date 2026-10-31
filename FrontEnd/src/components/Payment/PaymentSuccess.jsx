@@ -1,3 +1,4 @@
+/* COMPONENT QUE SIMULA O SUCESSO DA COMPRA */
 import { Link } from "react-router-dom";
 
 export function PaymentSuccess({ orderId, timeStamp, totalValue }) {
@@ -46,10 +47,14 @@ export function PaymentSuccess({ orderId, timeStamp, totalValue }) {
                     <strong>R$ {totalValue.toFixed(2)}</strong>
                 </div>
             </div>
+                <Link
+                to={"/orders"}
+                className="flex justify-center w-full rounded-xl bg-[#1e3a8a] text-white py-3 font-bold cursor-pointer">
+                    <button >
+                        Ver meus pedidos
+                    </button>
+                </Link>
                 
-                <button className="w-full rounded-xl bg-[#1e3a8a] text-white py-3 font-bold">
-                    Ver meus pedidos
-                </button>
                 
         </div>
     )
