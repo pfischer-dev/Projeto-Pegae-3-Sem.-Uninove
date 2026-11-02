@@ -1,20 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useCart } from "../../context/CartContext";
+import { useOrders } from "../../context/OrdersContext";
+
 import { HeaderNav } from "../../components/HeaderNav";
 import { ButtonEscolhaPagamento } from "../../components/Payment/Button_Escolha_Pagamento";
 import { Footer } from "../../components/Footer";
-import { useCart } from "../../context/CartContext";
 import { PixPayment } from "../../components/Payment/PixPayment";
 import { PaymentSuccess } from "../../components/Payment/PaymentSuccess";
 import qrCode_blue from "../../assets/icons/qrCode_blue.png";
 
+
 export default function Payment() {
     const [ paymentStatus, setPaymentStatus ] = useState('initial');
-    const [ timeLeft, setTimeLeft ] = useState(30);
-    const { totalItems, totalValue } = useCart();
+    const [ timeLeft, setTimeLeft ] = useState(2); /* retornar depois para 30 seconds */
+    const { items, totalItems, totalValue, clearCart } = useCart();
+    const { addOrders }  = useOrders()
 
     const [timeStamp, setTimeStamp] = useState(null);
     const [hashRandom, setHashRandom] = useState("");
     const [pixCode, setPixCode] = useState("");
+    const [pedidoConfirmado, setPedidoConfirmado] = useState(null);
+
+    const pedidoRegistrado = useRef(false);
 
     useEffect(()=> {
         if(paymentStatus !== 'pending') return;
@@ -31,6 +38,28 @@ export default function Payment() {
         }   
     }, [paymentStatus, timeLeft]);
 
+    //useEffect que REGISTRA o pedido
+    useEffect(() => {
+        if(paymentStatus !== 'paid') return;
+
+        if(pedidoRegistrado.current) return;
+        pedidoRegistrado.current = true;
+
+        const novoPedido = {
+            orderId: hashRandom,
+            timeStamp: timeStamp,
+            totalValue: totalValue,
+            items: items,
+            status: "Em preparo"
+        }
+        setPedidoConfirmado(novoPedido);
+        addOrders(novoPedido);
+        console.log("Pedido registrado:", novoPedido);
+        clearCart()
+    }, [paymentStatus, items, totalValue, hashRandom, timeStamp]);
+
+    
+    //funçao geradora do Pix
     function gerarPix() {
         const novoTimeStamp = Date.now();
 
@@ -45,12 +74,11 @@ export default function Payment() {
         setHashRandom(novoHash);
         setPixCode(novoPixCode);
         
-        setTimeLeft(30);
+        setTimeLeft(2); /*  voltar para 30 seconds apos terminar ajustes */
         setPaymentStatus('pending');
         console.log(novoTimeStamp);
     }
-    
-    
+
     return (
         <div id="container" className="min-h-screen w-full bg-white">
 
@@ -67,7 +95,12 @@ export default function Payment() {
                             className="rounded-xl w-90 text-white bg-[#1e3A8A] px-5 py-2"
                         >
                             <p className="text-xs">Resumo do Pedido</p>
-                            <h3 className="font-bold">{totalItems} produto - R$ {totalValue.toFixed(2)}</h3>
+                            <h3 className="font-bold">
+                                {pedidoConfirmado
+                                    ? pedidoConfirmado.items.reduce((soma, item) => soma + item.quantity, 0) 
+                                    :   totalItems} produtos - R$ 
+                                {(pedidoConfirmado?.totalValue ?? totalValue).toFixed(2)}
+                            </h3>
                         </div>
 
                         <div className="w-90 font-bold text-sm text-[#1e3A8a]">
@@ -87,17 +120,17 @@ export default function Payment() {
                         {paymentStatus === 'pending' && (
                             <PixPayment pixCode={pixCode}/>    
                         )}
-                        {paymentStatus === 'paid' && (
+                        {paymentStatus === 'paid' && pedidoConfirmado &&(
                             <PaymentSuccess
-                            orderId={hashRandom}
-                            timeStamp={timeStamp} 
-                            totalValue={totalValue}
+                                orderId={pedidoConfirmado.orderId}
+                                timeStamp={pedidoConfirmado.timeStamp} 
+                                totalValue={pedidoConfirmado.totalValue}
                             />
                         )}
 
                         <div id="total" className="w-85 flex flex-col justify-start text-[#1e3a8a]">
                             <p className="font-light text-m">Total</p>
-                            <h3 className="font-bold">R$ {totalValue.toFixed(2)}</h3>
+                            <h3 className="font-bold">R$ {(pedidoConfirmado?.totalValue ?? totalValue).toFixed(2)}</h3>
                         </div>
 
                     </div>

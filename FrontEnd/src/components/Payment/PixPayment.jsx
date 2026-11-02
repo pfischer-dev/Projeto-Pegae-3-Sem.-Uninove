@@ -47,7 +47,7 @@ export function PixPayment({ pixCode }) {
                 
                 <button 
                 onClick={copiarPix}
-                className="border-1 w-80 rounded-lg flex justify-center items-center gap-2 p-1"
+                className="border-1 w-80 rounded-lg flex justify-center items-center gap-2 p-1 cursor-pointer"
                 >
                     
                     <img className="w-4 h-4" src={copyButton} alt="button copy" />

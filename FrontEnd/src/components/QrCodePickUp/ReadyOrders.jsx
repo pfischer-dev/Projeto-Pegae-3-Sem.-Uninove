@@ -1,11 +1,13 @@
-import qrCode from "../../assets/icons/qrCode_blue.png"
+import qrCode from "../../assets/icons/qrCode_blue.png";
 import { OrderDetail } from "./OrderDetail"
 
-export function ReadyOrders() {
+export function ReadyOrders({ order }) {
+        console.log(order);
+    
     return (
-        <article className="w-90 border-1 border-gray-200 rounded-2xl border-[#1e3a8a] p-3 flex flex-col gap-8 shadow-lg">
+        <article className="w-90 border-1 border-gray-200 rounded-2xl border-[#1e3a8a] p-3 flex flex-col gap-3 shadow-lg">
             
-            <div id="successMsg_QR" className="flex flex-col justify-center items-center gap-3">
+            <div id="successMsg_QR" className="flex flex-col justify-center items-center gap-1">
                 
                 <div id="success_msg" className="flex items-center gap-2 p-2">
                     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-emerald-500">
@@ -16,9 +18,11 @@ export function ReadyOrders() {
                 <div>
                     <img className="w-30 h-30" id="order_qrCode" src={qrCode} alt="" />
                 </div>
+                
+                
             </div>
 
-            <OrderDetail />
+            <OrderDetail order={ order } />
             
         </article>
     )

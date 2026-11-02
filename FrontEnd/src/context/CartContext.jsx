@@ -60,9 +60,14 @@ export function CartProvider({ children }) { /* componente responsável por guar
         (soma, item) => soma + item.value * item.quantity,
         0
     );
+    /* funçao que limpa os itens e valores do carrinho */
+     function clearCart() {
+            setItems([]);
+        }
+
 
     return ( /* CartCotext.Provider disponibiliza os dados e as funções para outros componentes. */
-        <CartContext.Provider value={{ items, addToCart, changeQuantity, totalItems, totalValue }}> 
+        <CartContext.Provider value={{ items, addToCart, changeQuantity, totalItems, totalValue, clearCart }}> 
             {children}
         </CartContext.Provider>
     )

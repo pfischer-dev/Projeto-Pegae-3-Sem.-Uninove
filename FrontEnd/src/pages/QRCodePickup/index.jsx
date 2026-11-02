@@ -1,13 +1,16 @@
 import { useState } from "react";
-
 import { HeaderNav } from "../../components/HeaderNav";
 import { ReadyOrders } from "../../components/QrCodePickUp/ReadyOrders";
 import { OrderHistory } from "../../components/QrCodePickUp/OrderHistory";
 import { Footer } from "../../components/Footer";
+import { useOrders } from "../../context/OrdersContext";
 
 export default function QRCodePickup() {
     const [activeTab, setActiveTab] = useState('prontos');
-
+    const { orders, addOrders } = useOrders();
+    console.log(orders);
+    
+    /* funçao para mudar aba (prontos / historico) */
     function handleClick() {
         setActiveTab(activeTab === 'prontos' ? 'historico' : 'prontos');
     }
@@ -24,7 +27,7 @@ export default function QRCodePickup() {
                 <main className="flex-1 min-h-0 overflow-y-auto bg-[#F3F4F6] pb-4">
                     <div className="w-full flex flex-col justify-center items-center pb-8 gap-3">
 
-                        <nav id="abas" className="bg-red-200 w-full flex flex-col justify-between gap-1 border-b-1 border-gray-200">
+                        <nav id="abas" className="w-full flex flex-col justify-between gap-1 border-b-1 border-gray-200">
                             <div className="flex">
 
                                 <h3 
@@ -36,7 +39,7 @@ export default function QRCodePickup() {
                                 <h3 
                                 onClick={handleClick} 
                                 className={`w-50 flex justify-center items-center p-1 cursor-pointer font-semibold ${activeTab === 'prontos' ? "text-black" : "text-amber-600 font-semibold"}`}>
-                                    Históricos
+                                    Histórico
                                 </h3>
 
                             </div>
@@ -44,25 +47,17 @@ export default function QRCodePickup() {
                             <div className={`w-full flex ${activeTab === 'prontos' ? 'justify-start' : 'justify-end' }`}>
                                  <div 
                                  id="detail_bar" 
-                                 className={`h-1 w-50 bg-amber-500`}></div>
+                                 className={`h-1 w-50 bg-amber-600`}></div>
                             </div>
                         </nav>
 
                         {activeTab === 'prontos'
-                                ? ( <ReadyOrders /> )   
+                                ? ( <ReadyOrders order={ orders[0] }/> )   
                                 : ( <OrderHistory /> )         
                             }
 
-
                     </div>
                 </main>
-
-
-
-
-
-
-
 
                 <footer className="flex-shrink-0 w-full">
                     <Footer />
