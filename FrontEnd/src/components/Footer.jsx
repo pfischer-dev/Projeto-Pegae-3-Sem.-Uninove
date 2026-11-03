@@ -26,7 +26,7 @@ export function Footer() {
     ];
 
     return (
-        <footer className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-white border-t border-gray-200 flex justify-around items-center py-0 px-4 z-50">
+        <footer className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-white border-t border-gray-200 flex justify-around items-center py-1 px-4 z-50 rounded-t-sm">
             {navItems.map((item) => (
                 <NavLink key={item.id} to={item.to}>
                     {({ isActive }) => (
