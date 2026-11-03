@@ -1,4 +1,5 @@
 import { useCart } from "../context/CartContext";
+import { FiPlus } from "react-icons/fi";
 
 export function Product(props) {
     const { addToCart } = useCart();
@@ -15,13 +16,13 @@ export function Product(props) {
 
             <div className="w-full flex items-center gap-3 border border-[#1E3A8A] bg-white p-2 rounded-2xl">
 
-                <img src={props.image} alt="imagem produto" className="w-20 h-20 sm:w-25 sm:h-25 flex-shrink-0 rounded-xl object-cover" />
+                <img src={props.image} alt="imagem produto" className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-xl object-cover" />
 
                 <div id="product_description" className="flex flex-col flex-1 min-w-0 gap-1.5">
 
                     <h2 className=" font-bold text-sm sm:text-base truncate w-full">{props.name}</h2>
 
-                    <p className="text-xs sm:text-sm text-gray-600">{props.description}</p>
+                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">{props.description}</p>
 
                     <div id="price_item" className="flex justify-between" >
 
@@ -29,11 +30,9 @@ export function Product(props) {
 
                         <button
                             onClick={() => addToCart(product, props.restaurant)}
-                            className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
+                            className="shrink-0 flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
                         >
-                            <span className="text-base leading-none relative -top-[1.5px] cursor-pointer">
-                                +
-                            </span>
+                            <FiPlus size={18} />
                         </button>
 
                     </div>

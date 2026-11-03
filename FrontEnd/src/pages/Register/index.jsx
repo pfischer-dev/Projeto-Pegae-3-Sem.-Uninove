@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Input } from "../../components/Input";
 import { Button_login_register } from "../../components/Button_login_register";
-
+import { useNavigate } from "react-router-dom";
 /* ICONS */
-import userOutline from "../../assets/icons/userOutline.png";
-import email from "../../assets/icons/email.png";
-import file from "../../assets/icons/file.png";
-import telephone from "../../assets/icons/telephone.png";
-import padlockOutline from "../../assets/icons/padlockOutline.png";
-import arrow from "../../assets/icons/arrow.png";
+import { FiUser, FiMail, FiFileText, FiPhone, FiLock, FiArrowLeft } from "react-icons/fi";
 import logoPegae from "../../assets/logoPegae.png";
 
 export default function Register() {
-        const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
+
+  const [formData, setFormData] = useState({
     nomeCompleto: "",
     email: "",
     cpf_ra: "",
@@ -67,7 +68,7 @@ export default function Register() {
       }
 
       alert("Cadastro realizado com sucesso!");
-      
+
       setFormData({
         nomeCompleto: "",
         email: "",
@@ -84,83 +85,89 @@ export default function Register() {
     }
   };
 
-   return (
-    <div id="container" className=" flex flex-col h-screen w-screen justify-center items-center gap-8 text-[#1E3A8A] bg-[#F3F4F6]">
-        <img className="w-30" src={logoPegae} alt="" />
-        <div className="w-80 flex flex-col justify-center ">
-            <img className="bg-[#1E3A8A] rounded-lg p-1.5 w-7" src={arrow} alt="" />
-        </div>
-        
-        <h1 className="font-bold text-2xl w-80 h-2">Criar Conta</h1>
-        
-        {errorMessage && (
+  return (
+    <div id="container" className="min-h-dvh w-full flex flex-col justify-center items-center gap-6 px-4 py-8 text-[#1E3A8A] bg-[#F3F4F6]">
+      <img className="w-30" src={logoPegae} alt="" />
+
+      <div className="w-full max-w-sm flex flex-col justify-center">
+        <button
+          type="button"
+          onClick={handleBack}
+          className="bg-[#1E3A8A] rounded-lg p-1.5 w-8 h-8 flex items-center justify-center cursor-pointer"
+          aria-label="Voltar"
+        >
+          <FiArrowLeft className="text-white text-xl" />
+        </button>
+      </div>
+
+      <h1 className="font-bold text-2xl w-full max-w-sm">Criar Conta</h1>
+
+      {errorMessage && (
         <p className="text-red-500 text-sm font-semibold">{errorMessage}</p>
       )}
 
-        <form action="#" method="post" className="flex flex-col gap-4 items-center justify-center">
-            <Input iconSrc={userOutline}
-                    iconAlt="Icone Usuario"
-                    type="text" 
-                    placeholder="Nome Completo"
-                    name="nomeCompleto"
-                    value={formData.nomeCompleto}
-                    onChange={handleChange}
-            />
-            <Input 
-            iconSrc={email}
-                    iconAlt="Icone email"
-                    type="email" 
-                    placeholder="emailUniversitario@uni9.edu.br"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-            />
+      <form 
+        onSubmit={handleSubmit} 
+        className="w-full max-w-sm flex flex-col gap-4 items-center justify-center"
+      >
+        <Input
+          icon={<FiUser />}
+          type="text"
+          placeholder="Nome Completo"
+          name="nomeCompleto"
+          value={formData.nomeCompleto}
+          onChange={handleChange}
+        />
+        <Input
+          icon={<FiMail />}
+          type="email"
+          placeholder="emailUniversitario@uni9.edu.br"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
 
-            <Input 
-            iconSrc={file}
-                    iconAlt="Icone file"
-                    type="text" 
-                    placeholder="Digite seu CPF"
-                    name="cpf"
-                    value={formData.cpf_ra}
-                    onChange={handleChange}
-            />
+        <Input
+          icon={<FiFileText />}
+          type="text"
+          placeholder="Digite seu CPF"
+          name="cpf_ra"  /* ajustei */
+          value={formData.cpf_ra}
+          onChange={handleChange}
+        />
 
-            <Input 
-            iconSrc={telephone}
-                    iconAlt="Icone phonel"
-                    type="tel" 
-                    placeholder="Telefone"
-                    name="telephone"
-                    value={formData.telephone}
-                    onChange={handleChange}
-            />
+        <Input
+          icon={<FiPhone />}
+          type="tel"
+          placeholder="Telefone"
+          name="telephone"
+          value={formData.telephone}
+          onChange={handleChange}
+        />
 
-            <Input 
-            iconSrc={padlockOutline}
-                    iconAlt="Icone cadeado"
-                    type="password" 
-                    placeholder="Senha"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-            />
+        <Input
+          icon={<FiLock />}
+          type="password"
+          placeholder="Senha"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
 
-            <Input 
-            iconSrc={padlockOutline}
-                    iconAlt="Icone cadeado"
-                    type="password" 
-                    placeholder="Confirmar Senha"
-                    name="password"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-            />
+        <Input
+          icon={<FiLock />}
+          type="password"
+          placeholder="Confirmar Senha"
+          name="confirmPassword" /* ajustei */
+          value={formData.confirmPassword}
+          onChange={handleChange}
+        />
 
-            <Button_login_register 
-            type="submit" 
-            buttonText={loading ? "Cadastrando..." : "Registrar"}
-            disabled={loading} />
-        </form>
+        <Button_login_register
+          type="submit"
+          buttonText={loading ? "Cadastrando..." : "Registrar"}
+          disabled={loading} />
+      </form>
     </div>
-   ) 
+  )
 }

@@ -8,20 +8,19 @@ import { Button_login_register } from "../../components/Button_login_register";
 
 export default function Login() {
     return (
-      <main className="min-h-screen w-full bg-[#F3F4F6] text-blue-950 flex justify-center items-center px-4 py-8 sm:px-6">
+      <main className="min-h-dvh w-full bg-[#F3F4F6] text-blue-950 flex justify-center items-center px-4 py-8 sm:px-6">
 
         <div className="w-full max-w-md flex flex-col items-center gap-8 bg-[#F3F4F6]">
           
-          {/*VERSAO ORIGINAL CRIADO POR MIM container flex flex-col h-screen w-screen justify-center items-center gap-9 text-blue-950 bg-[#F3F4F6] */}
-          <div className="logoLogin flex flex-col justify-center">
+          <div className="flex flex-col justify-center items-center">
             <img src={logoPegae} alt="logo marca da Pegaê" className="w-48 sm:w-52 h-auto"/>
             <h3>Peça seu lanche e retire sem filas</h3>
           </div>
       
           <form action="#" method="post" className="w-full flex flex-col items-center gap-4">
-            {/* flex flex-col gap-3 items-center justify-center*/}
+            
 
-            <div className="w-full flex flex-col items-center gap-3"> {/* essa div nao existia */}
+            <div className="w-full flex flex-col items-center gap-3"> 
               <Input iconSrc={user}
             iconAlt="Icone Usuario"
             type="text" 
@@ -50,7 +49,7 @@ export default function Login() {
           
           <div className="w-full flex flex-col items-center gap-4">
             
-            <div className="register w-70 flex flex-wrap items-center justify-center gap-1 border-2 border-blue-950 p-3 rounded-md">
+            <div className="w-full max-w-[280px] flex flex-wrap items-center justify-center gap-1 border-2 border-blue-950 p-3 rounded-md">
               
               <p>Não tem conta?</p>
               

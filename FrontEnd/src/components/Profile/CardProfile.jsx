@@ -1,5 +1,3 @@
-import avatarProfile from "../assets/icons/userProfile.png";
-
 export function CardProfile({usuario}) {
     console.log(usuario);
     
@@ -11,10 +9,10 @@ export function CardProfile({usuario}) {
                 </div>
                 
                 
-                <button className="text-xs text-amber-500 border-1 border-white/50 bg-white/10 rounded-4xl px-3">Adicionar foto</button>
+                <button className="text-xs text-amber-500 border border-white/50 bg-white/10 rounded-4xl px-3">Adicionar foto</button>
                 <h2 className="text-xl font-bold text-white">{usuario.name}</h2>
                 <div className="font-bold text-[9px] flex flex-col">
-                    <div id="emailProfile" className="w-80 flex gap-3 bg-white/20 rounded-t-xl p-2 border-b-1 border-white/25">
+                    <div id="emailProfile" className="w-80 flex gap-3 bg-white/20 rounded-t-xl p-2 border-b border-white/25">
                         <p className="text-amber-500 text-[9px] w-15">E-MAIL</p>
                         <p className="text-white">{usuario.email}</p>
                     </div>
@@ -22,7 +20,7 @@ export function CardProfile({usuario}) {
                         <p className="text-amber-500 text-[9px] w-15">CURSO</p>
                         <p className="text-white">{usuario.name}</p>
                     </div>
-                    <div id="campusProfile" className="flex gap-3 bg-white/20 rounded-b-xl p-2 border-t-1 border-white/25">
+                    <div id="campusProfile" className="flex gap-3 bg-white/20 rounded-b-xl p-2 border-t border-white/25">
                         <p className="text-amber-500 text-[9px] w-15">CAMPUS</p>
                         <p className="text-white">{usuario.campus}</p>
                     </div>

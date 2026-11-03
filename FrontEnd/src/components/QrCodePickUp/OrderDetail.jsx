@@ -14,34 +14,34 @@ export function OrderDetail({ order, showQRCode = true, showStatus = "Em Preparo
     const [modalOpen, setModalOpen] = useState(false);
 
     function openModal() {
-        setModalOpen(!modalOpen);
+        setModalOpen(true);
     }
 
     return (
         <div
             id="order_detail"
-            className="w-full flex flex-col items-center gap-2 p-5 border-1 rounded-2xl border-gray-200 shadow-md">
+            className="w-full max-w-[360px] min-w-0 flex flex-col items-center gap-2 p-4 border rounded-2xl border-gray-200 shadow-sm bg-white">
             
-            <div className="w-80 flex justify-between text-[#1e3a8a] border-b-1 border-gray-200">
+            <div className="w-full flex justify-between gap-3 text-[#1e3a8a] border-b border-gray-200">
                 <span>Pedido:</span>
                 <p>#{order.orderId}</p>
             </div>
-            <div className="w-80 flex justify-between text-[#1e3a8a] border-b-1 border-gray-200">
+            <div className="w-full flex justify-between gap-3 text-[#1e3a8a] border-b border-gray-200">
                 <p>Data:</p>
                 <p>{dataPedido.toLocaleDateString("pt-BR")}</p>
             </div>
-            <div className="w-80 flex justify-between text-[#1e3a8a] border-b-1 border-gray-200">
+            <div className="w-full flex justify-between gap-3 text-[#1e3a8a] border-b border-gray-200">
                 <p>Horário:</p>
                 <p>{horaPagamento.toLocaleTimeString("pt-BR")}</p>
             </div>
-            <div className="w-80 flex justify-between text-[#1e3a8a] border-b-1 border-gray-200">
+            <div className="w-full flex justify-between gap-3 text-[#1e3a8a] border-b border-gray-200">
                 <p>Total:</p>
                 <p className="font-bold">{valorTotal.toLocaleString("pt-BR", {
                     style: 'currency',
                     currency: 'BRL'
                 })}</p>
             </div>
-            <div className="w-80 flex justify-between text-[#1e3a8a] border-b-1 border-gray-200">
+            <div className="w-full flex justify-between gap-3 text-[#1e3a8a] border-b border-gray-200">
                 <p>Status</p>
                 
                 {showStatus && (
@@ -54,7 +54,7 @@ export function OrderDetail({ order, showQRCode = true, showStatus = "Em Preparo
 
             {showQRCode && (
                 <button
-                    className="w-80 mt-5 bg-amber-600 text-white font-bold p-2 rounded-lg hover:bg-amber-600/90"
+                    className="w-full mt-5 bg-amber-600 text-white font-bold p-2 rounded-lg hover:bg-amber-600/90"
                     onClick={openModal}
                 >
                     Mostrar QR Code
@@ -64,7 +64,12 @@ export function OrderDetail({ order, showQRCode = true, showStatus = "Em Preparo
                 <ModalQRCode onClose={() => setModalOpen(false)} />
             )}
             
-            <p className="text-[.8rem] font-light text-gray-600">Válido por 2hs após o pagamento</p>
+            {showQRCode && (
+                <p className="text-[.8rem] font-light text-gray-600">
+                    Válido por 2hs após o pagamento
+                </p>
+            )}
+            
         </div>
     )
 }

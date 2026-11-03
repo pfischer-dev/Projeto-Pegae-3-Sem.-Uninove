@@ -44,22 +44,22 @@ export function PaymentSuccess({ orderId, timeStamp, totalValue }) {
 
             {/* item 3 da lista */}
             <div className="w-full border-t border-gray-200 pt-3 flex flex-col gap-2 text-sm">
-                <div className="flex justify-between border-b-1 border-gray-200">
+                <div className="flex justify-between border-b border-gray-200">
                     <span>Pedido:</span>
                     <strong>#{orderId}</strong>
                 </div>
 
-                <div className="flex justify-between border-b-1 border-gray-200">
+                <div className="flex justify-between border-b border-gray-200">
                     <span>Data:</span>
                     <strong>{dataFormatada}</strong>
                 </div>
 
-                <div className="flex justify-between border-b-1 border-gray-200">
+                <div className="flex justify-between border-b border-gray-200">
                     <span>Horário:</span>
                     <strong>{horarioFormatado}</strong>
                 </div>
 
-                <div className="flex justify-between border-b-1 border-gray-200">
+                <div className="flex justify-between border-b border-gray-200">
                     <span>Total:</span>
                     <strong>R$ {totalValue.toFixed(2)}</strong>
                 </div>

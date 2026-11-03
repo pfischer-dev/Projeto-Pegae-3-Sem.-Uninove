@@ -14,7 +14,7 @@ export function PixPayment({ pixCode }) {
 
     return (
         <div id="pixKey_payment" className="flex flex-col justify-center gap-2 
-                        w-90 border-1 rounded-xl p-3 pl-1 text-[#1e3a8a] bg-white">
+                        w-90 border rounded-xl p-3 pl-1 text-[#1e3a8a] bg-white">
 
             <div className="flex items-center justify-center gap-2 px-2">
                 <img 
@@ -33,7 +33,7 @@ export function PixPayment({ pixCode }) {
             </p>
 
             <div className="flex justify-center">
-                <div id="key_pix" className="w-80 border-1 rounded-lg flex items-center justify-center px-2 py-1">
+                <div id="key_pix" className="w-80 border rounded-lg flex items-center justify-center px-2 py-1">
                     
                     <p 
                     className="text-[11px] font-extralight break-all overflow-hidden">
@@ -47,7 +47,7 @@ export function PixPayment({ pixCode }) {
                 
                 <button 
                 onClick={copiarPix}
-                className="border-1 w-80 rounded-lg flex justify-center items-center gap-2 p-1 cursor-pointer"
+                className="border w-80 rounded-lg flex justify-center items-center gap-2 p-1 cursor-pointer"
                 >
                     
                     <img className="w-4 h-4" src={copyButton} alt="button copy" />

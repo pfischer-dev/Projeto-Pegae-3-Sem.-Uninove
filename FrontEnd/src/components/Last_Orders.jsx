@@ -1,10 +1,10 @@
-import { OrderCard } from "./OrderCard"; 
+import { OrderCard } from "./OrderCard"
 import shopBagOrange from "../assets/icons/shopBag-orange.png";
 
 
 export function Last_Orders() {
     return (
-        <div id="container" className="border-1 rounded-xl border-[#1e3a8a]/40 w-90 p-4 flex flex-col gap-2 ">
+        <div id="container" className="border rounded-xl border-[#1e3a8a]/40 w-90 p-4 flex flex-col gap-2 ">
             <div id="last_orders_card" className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
                     <img src={shopBagOrange} alt="shopbag icon" className="w-4 h-4" />

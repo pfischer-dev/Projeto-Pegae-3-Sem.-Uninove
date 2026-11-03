@@ -5,22 +5,20 @@ export function OrderHistory() {
     const { orders } = useOrders();
 
     return (
-        <div>
-            <div>
-                <h3>Histórico de Pedidos</h3>
-            </div>
-            <main>
-                <div>
-                    {orders.map(order => (
-                        <OrderDetail 
+        <div className="w-full flex flex-col items-center gap-3 px-2">
+            
+            <h3 className="text-xl font-bold text-[#1e3a8a]">Histórico de Pedidos</h3>
+            <div className="w-full flex flex-col items-center gap-3">
+                {orders.map(order => (
+                    <OrderDetail 
                         key={order.orderId}
                         order={ order }
                         showQRCode={false}
                         showStatus="Retirado"
-                        />
-                    ))}
-                </div>
-            </main>
+                    />
+                ))}
+            </div>
+            
         </div>
         
 

@@ -1,3 +1,4 @@
+import { FiPlus, FiMinus } from "react-icons/fi";
 import { useCart } from "../context/CartContext";
 
 export function ShopItem({ item }) {
@@ -7,7 +8,7 @@ export function ShopItem({ item }) {
             <div className="flex items-center gap-2">
                 <img src={item.image} alt={item.name} className="w-20 h-20 rounded-2xl object-cover flex-shrink-0" />
 
-                <div className="flex flex-col">
+                <div className="flex flex-col min-w-0">
                     <h2>{item.name}</h2>
                     <h3 className="font-bold text-amber-500">{item.value.toLocaleString("pt-BR", {
                         style: "currency",
@@ -23,16 +24,16 @@ export function ShopItem({ item }) {
                     className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
                     onClick={() => changeQuantity(item.id, -1)}
                 >
-                    <span className="relative -top-[2px] text-base leading-none cursor-pointer">−</span>
+                    <FiMinus size={15} />
                 </button>
 
-                <span className="text-xs     font-bold">{item.quantity}</span>
+                <span className="text-xs font-bold">{item.quantity}</span>
 
                 <button
                     className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
                     onClick={() => changeQuantity(item.id, 1)}
                 >
-                    <span className="relative -top-[2px] text-base leading-none cursor-pointer">+</span>
+                    <FiPlus size={15} />
                 </button>
             </div>
         </div>

@@ -7,21 +7,18 @@ export function HeaderNav(props) {
     return (
         <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200  rounded-b-sm">
             <div className="w-full flex items-center gap-3 py-3 px-4">
-                <Link
-                    to="/"
-                    aria-label="Voltar para a página inicial"
-                    className="flex-shrink-0">
-                    <button 
+
+                <button
                     className="w-7 h-7 bg-[#1e3a8a] rounded-lg p-1 flex justify-center items-center cursor-pointer"
-                    onClick={ () => navigate(-1) }>
-                        <img
-                            src={arrow}
-                            alt="botão voltar"
-                            className="w-4 h-4 object-contain " />
-                    </button>
+                    onClick={() => navigate(-1)}>
+                    <img
+                        src={arrow}
+                        alt="botão voltar"
+                        className="w-4 h-4 object-contain " />
+                </button>
 
 
-                </Link>
+
                 <h2 className="flex-1 min-w-0 text-center font-bold truncate">
                     {props.name}
                 </h2>
@@ -29,11 +26,11 @@ export function HeaderNav(props) {
                 <Link
                     to="/" /* mudar depois para a rota de notificacoes */
                     aria-label="notificaticações"
-                    className="flex-shrink-0">
-                    <button 
-                    type="button" 
-                    aria-label="Notificações" 
-                    className="flex-shrink-0"
+                    className="shrink-0">
+                    <button
+                        type="button"
+                        aria-label="Notificações"
+                        className="shrink-0"
                     >
                         <img src={notification_signal_active}
                             alt="botão notificaçoes"
