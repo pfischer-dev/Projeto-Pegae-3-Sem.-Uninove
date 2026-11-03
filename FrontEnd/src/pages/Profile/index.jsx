@@ -23,7 +23,7 @@ export default function Profile() {
                 <HeaderNav name="Meu Perfil" />
             </div>
 
-            <main className="flex flex-col justify-center items-center gap-4 pb-20">
+            <main className="flex flex-col justify-center items-center gap-4 pb-20 pt-4">
                 <div id="cardProfile" className="w-full flex justify-center">
                     <CardProfile usuario={usuario} />
                 </div>
@@ -57,6 +57,7 @@ export default function Profile() {
                         key={modalType}
                         type={modalType}
                         onClose={() => setModalType(null)}
+                        usuario={usuario}
                     />
                 )}
 

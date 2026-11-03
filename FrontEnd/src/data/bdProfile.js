@@ -15,7 +15,7 @@ export const profile = [
         isConnect: false,
             password: {
             senhaAtual: "123456",
-            novaSenha: []
+            novaSenha: ""
         }
     },
     {
@@ -28,7 +28,7 @@ export const profile = [
         isConnect: false,
         password: {
             senhaAtual: "123456",
-            novaSenha: []
+            novaSenha: ""
         }
     },
     {
@@ -41,7 +41,7 @@ export const profile = [
         isConnect: false,
         password: {
             senhaAtual: "123456",
-            novaSenha: []
+            novaSenha: ""
         }
     },
     {
@@ -54,7 +54,7 @@ export const profile = [
         isConnect: false,
         password: {
             senhaAtual: "123456",
-            novaSenha: []
+            novaSenha: ""
         }
     },
 ]

@@ -1,9 +1,26 @@
+import { useState } from "react";
+import { Input } from "../Input";
 import { FiUser, FiLock } from "react-icons/fi";
 import { RiCloseLargeLine } from "react-icons/ri";
 import logoPegae from "../../assets/logoPegae.png";
 
-export function ModalProfile({ type, onClose }) {
+export function ModalProfile({ type, onClose, usuario }) {
     const isProfile = type === "perfil";
+    const [ formData, setFormData ] = useState({
+        name: usuario.name,
+        email: usuario.email,
+        cpf_ra: usuario.cpf_ra,
+        telephone: usuario.telephone
+    });
+
+    function handleChange(e) {
+        const { name, value } = e.target;
+
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    }
 
     return (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
@@ -34,7 +51,7 @@ export function ModalProfile({ type, onClose }) {
                         ? "Mantenha seus dados atualizados."
                         : "Escolha uma nova senha para sua conta."}
                 </p>
-                        
+
                 {/* Aqui entra o formulário de cada modalidade */}
 
             </div>
