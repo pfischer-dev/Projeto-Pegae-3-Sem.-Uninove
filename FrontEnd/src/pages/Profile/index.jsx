@@ -10,7 +10,7 @@ import { useState } from "react";
 
 export default function Profile() {
     const [modalType, setModalType] = useState(null)
-    const usuario = profile[0];
+    const [ usuario, setUsuario ] = useState(profile[0]);
 
     function openModal(type) {
         setModalType(type);
@@ -58,12 +58,13 @@ export default function Profile() {
                         type={modalType}
                         onClose={() => setModalType(null)}
                         usuario={usuario}
+                        onSave={(dadosAtualizados) => setUsuario(dadosAtualizados)}
                     />
                 )}
 
             </main>
 
-            <footer className="flex-shrink-0 w-full">
+            <footer className="shrink-0 w-full">
                 <Footer />
             </footer>
         </AppLayout>

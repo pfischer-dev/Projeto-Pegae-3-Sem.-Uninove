@@ -16,12 +16,12 @@ export function CardProfile({usuario}) {
                         <p className="text-amber-500 text-[9px] w-15">E-MAIL</p>
                         <p className="text-white">{usuario.email}</p>
                     </div>
-                    <div id="cursoProfile" className="w-80 flex gap-3 bg-white/20 p-2">
-                        <p className="text-amber-500 text-[9px] w-15">CURSO</p>
-                        <p className="text-white">{usuario.name}</p>
+                    <div id="cpf_raProfile" className="w-80 flex gap-3 bg-white/20 p-2">
+                        <p className="text-amber-500 text-[9px] w-15">Curso</p>
+                        <p className="text-white">{usuario.curso}</p>
                     </div>
                     <div id="campusProfile" className="flex gap-3 bg-white/20 rounded-b-xl p-2 border-t border-white/25">
-                        <p className="text-amber-500 text-[9px] w-15">CAMPUS</p>
+                        <p className="text-amber-500 text-[9px] w-15">TELEFONE</p>
                         <p className="text-white">{usuario.campus}</p>
                     </div>
                 </div>

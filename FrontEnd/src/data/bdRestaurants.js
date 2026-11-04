@@ -651,7 +651,6 @@ export const productImageUrls = {
   "Trufa de Cacau":
     "https://images.unsplash.com/photo-1775201630951-665651af1747?w=600",
 };
-
 // Adiciona a propriedade image aos 60 produtos.
 bdRestaurants.forEach((restaurant) => {
   Object.values(restaurant.menu).forEach((products) => {
