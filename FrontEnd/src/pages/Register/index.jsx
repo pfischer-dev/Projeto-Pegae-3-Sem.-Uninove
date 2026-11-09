@@ -67,7 +67,9 @@ export default function Register() {
         throw new Error(data.mensagem || data.message || "Erro ao realizar o cadastro.");
       }
 
-      alert("Cadastro realizado com sucesso!");
+      //alert("Cadastro realizado com sucesso!");
+      navigate("/login");
+      
 
       setFormData({
         nomeCompleto: "",

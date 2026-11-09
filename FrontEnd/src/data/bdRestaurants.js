@@ -3,6 +3,7 @@ import lanchoneteDaPracaImg from "../assets/lanchonete2.png";
 import expressCafeImg from "../assets/lanchonete3.jpg";
 import cantinaGrillImg from "../assets/lanchonete4.jpg";
 import naturalJuiceAcaiImg from "../assets/lanchonete5.png";
+import { getProductImage } from "../utils/getProductImage";
 
 export const bdRestaurants = [
   {
@@ -19,7 +20,7 @@ export const bdRestaurants = [
     menu: {
       foods: [
         {
-          name: "Coxinha de Frango c/ Catupiry",
+          name: "Coxinha de Frango com Catupiry",
           description: "Massa crocante com recheio cremoso de frango e catupiry.",
           value: 8.5,
           quantity: 0,
@@ -467,190 +468,7 @@ export const bdRestaurants = [
   },
 ];
 
-export const productImageUrls = {
-  // COMIDAS
-  "Coxinha de Frango c/ Catupiry":
-    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600",
 
-  "Esfiha Assada (Carne ou Queijo)":
-    "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600",
-
-  "Pão de Queijo Mineiro":
-  "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600",
-
-  "Misto Quente":
-    "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600",
-
-  "Cheeseburger da Praça":
-    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600",
-
-  "Hot Dog Completo":
-  "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600",
-
-  "Bauru de Presunto e Queijo":
-  "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600",
-
-  "Batata Frita Individual":
-    "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600",
-
-  "Croissant de Queijo":
-    "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600",
-
-  "Tapioca de Frango":
-    "https://images.unsplash.com/photo-1547592180-85f173990554?w=600",
-
-  "Quiche de Alho-poró":
-    "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=600",
-
-  "Sanduíche Integral":
-    "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=600",
-
-  "Prato Feito de Frango Grelhado":
-    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600",
-
-  "Strogonoff de Frango":
-    "https://images.unsplash.com/photo-1547592180-85f173990554?w=600",
-
-  "Omelete Completo":
-    "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600",
-
-  "Filé de Frango à Parmegiana":
-    "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?w=600",
-
-  "Açaí Tradicional 300 ml":
-    "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600",
-
-  "Wrap de Frango":
-    "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600",
-
-  "Sanduíche Natural de Atum":
-    "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600",
-
-  "Salada de Grãos":
-    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600",
-
-  // BEBIDAS
-  "Café Expresso":
-    "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=600",
-
-  "Suco de Laranja":
-    "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600",
-
-  "Refrigerante Lata":
-    "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=600",
-
-  "Água Mineral":
-    "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600",
-
-  "Milk-shake de Chocolate":
-    "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600",
-
-  "Limonada Suíça":
-    "https://images.unsplash.com/photo-1656936637945-571e3f0893f9?w=600",
-
-  "Chá Gelado de Pêssego":
-    "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600",
-
-  "Água com Gás":
-    "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=600",
-
-  "Cappuccino Cremoso":
-    "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=600",
-
-  "Café Latte":
-    "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
-
-  "Chocolate Quente":
-    "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=600",
-
-  "Mocha Gelado":
-    "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600",
-
-  "Suco de Abacaxi com Hortelã":
-    "https://images.unsplash.com/photo-1546173159-315724a31696?w=600",
-
-  "Suco Natural de Maracujá":
-    "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600",
-
-"Limonada Natural":
-    "https://images.unsplash.com/photo-1656936637945-571e3f0893f9?w=600",
-
-  "Chá-Mate Gelado":
-    "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600",
-
-  "Suco Verde":
-    "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=600",
-
-  "Vitamina de Banana":
-    "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600",
-
-  "Suco de Melancia":
-    "https://images.unsplash.com/photo-1525385133512-2f3bdd039054?w=600",
-
-  "Água de Coco":
-    "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=600",
-
-  // DOCES
-  "Brigadeiro Gourmet":
-    "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600",
-
-  "Brownie de Chocolate":
-    "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
-
-  "Cookie com Gotas de Chocolate":
-    "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600",
-
-  "Mini Pudim de Leite":
-    "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600",
-
-  "Sorvete de Casquinha":
-    "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600",
-
-  "Sundae de Chocolate":
-    "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600",
-
-  "Mini Churros":
-    "https://images.unsplash.com/photo-1624371414361-e670edf4898d?w=600",
-
-  "Fatia de Torta de Limão":
-    "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600",
-
-  "Fatia de Bolo de Cenoura":
-    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600",
-
-  "Mini Cheesecake de Frutas Vermelhas":
-    "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600",
-
-  "Muffin de Blueberry":
-    "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=600",
-
-  "Palha Italiana":
-    "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600",
-
-  "Mousse de Maracujá":
-    "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600",
-
-  "Pudim de Coco":
-    "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600",
-
-  "Salada de Frutas":
-    "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600",
-
-  "Doce de Abóbora com Coco":
-    "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600",
-
-  "Açaí com Morango e Creme de Avelã":
-    "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600",
-
-  "Overnight Oats com Frutas":
-    "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=600",
-
-  "Iogurte com Granola e Mel":
-    "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600",
-
-  "Trufa de Cacau":
-    "https://images.unsplash.com/photo-1775201630951-665651af1747?w=600",
-};
 // Adiciona a propriedade image aos 60 produtos.
 bdRestaurants.forEach((restaurant) => {
   Object.values(restaurant.menu).forEach((products) => {
@@ -663,7 +481,18 @@ bdRestaurants.forEach((restaurant) => {
       .replace(/^-|-$/g, "");
 
       product.id = `${restaurant.id}-${nomeProduto}`
-      product.image = productImageUrls[product.name];
+      product.image = getProductImage(restaurant.id, product.name);
     });
   });
+});
+
+bdRestaurants.forEach((restaurant) => {
+    Object.values(restaurant.menu).forEach((products) => {
+        products.forEach((product) => {
+            console.log(
+                product.name,
+                product.image ? "IMAGEM OK" : "SEM IMAGEM"
+            );
+        });
+    });
 });
