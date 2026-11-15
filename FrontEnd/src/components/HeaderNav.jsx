@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import arrow from "../assets/icons/arrow.png";
 import notification_signal_active from "../assets/icons/notification_signal_inactive.png";
+import { MdOutlineDarkMode } from "react-icons/md";
 
 export function HeaderNav(props) {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ export function HeaderNav(props) {
             <div className="w-full flex items-center gap-3 py-3 px-4">
 
                 <button
-                    className="w-7 h-7 bg-[#1e3a8a] rounded-lg p-1 flex justify-center items-center cursor-pointer"
+                    className="w-7 h-7 bg-[#1e3a8a] rounded-lg p-1 flex justify-center items-center cursor-pointer hover:opacity-90"
                     onClick={() => navigate(-1)}>
                     <img
                         src={arrow}
@@ -32,10 +33,14 @@ export function HeaderNav(props) {
                         aria-label="Notificações"
                         className="shrink-0"
                     >
-                        <img src={notification_signal_active}
+                        <MdOutlineDarkMode 
+                            size={22}
+                            className="text-amber-600"
+                            />
+                        {/* <img src={notification_signal_active}
                             alt="botão notificaçoes"
                             className="w-6"
-                        />
+                        /> */}
                     </button>
                 </Link>
             </div>

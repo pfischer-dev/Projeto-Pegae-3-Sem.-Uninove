@@ -12,7 +12,7 @@ import qrCode_blue from "../../assets/icons/qrCode_blue.png";
 
 export default function Payment() {
     const [paymentStatus, setPaymentStatus] = useState('initial');
-    const [timeLeft, setTimeLeft] = useState(2); /* retornar depois para 30 seconds */
+    const [timeLeft, setTimeLeft] = useState(10); /* retornar depois para 30 seconds */
     const { items, totalItems, totalValue, clearCart } = useCart();
     const { addOrders } = useOrders()
 
@@ -74,7 +74,7 @@ export default function Payment() {
         setHashRandom(novoHash);
         setPixCode(novoPixCode);
 
-        setTimeLeft(2); /*  voltar para 30 seconds apos terminar ajustes */
+        setTimeLeft(10); /*  voltar para 30 seconds apos terminar ajustes */
         setPaymentStatus('pending');
         console.log(novoTimeStamp);
     }
@@ -112,7 +112,7 @@ export default function Payment() {
                     {paymentStatus !== 'paid' && (
                         <div className="flex justify-center">
                             <button onClick={gerarPix}
-                                className="w-full max-w-[280px] flex justify-center items-center rounded-xl bg-amber-600 text-white px-5 py-3 gap-2">
+                                className="w-full max-w-[280px] flex justify-center items-center rounded-xl bg-amber-600 hover:opacity-90 text-white px-5 py-3 gap-2">
                                 <h3 className="font-bold cursor-pointer">Gerar Código Pix</h3>
                             </button>
                         </div>

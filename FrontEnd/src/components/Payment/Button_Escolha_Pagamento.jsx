@@ -9,7 +9,7 @@ export function ButtonEscolhaPagamento(props) {
             </div>
 
             <div id="selection_pix" className="shrink-0 flex justify-end items-center">    
-                <div className="w-5 h-5 bg-amber-500 rounded-full flex justify-center items-center">
+                <div className="w-5 h-5 bg-amber-600 rounded-full flex justify-center items-center">
                     <div className="w-3 h-3 bg-white rounded-full">
                     </div>
                 </div>

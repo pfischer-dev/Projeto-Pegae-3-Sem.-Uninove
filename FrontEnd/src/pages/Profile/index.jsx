@@ -10,7 +10,7 @@ import { useState } from "react";
 
 export default function Profile() {
     const [modalType, setModalType] = useState(null)
-    const [ usuario, setUsuario ] = useState(profile[0]);
+    const [ usuario, setUsuario ] = useState(profile[2]);
 
     function openModal(type) {
         setModalType(type);
@@ -35,7 +35,7 @@ export default function Profile() {
                     <button
                         onClick={() => openModal("perfil")}
                         type="button"
-                        className="flex-1 flex items-center justify-center gap-2 bg-amber-600 text-white font-semibold text-sm py-3 px-2 rounded-xl shadow-sm hover:bg-amber-700 transition"
+                        className="flex-1 flex items-center justify-center gap-2 bg-amber-600 text-white font-semibold text-sm py-3 px-2 rounded-xl shadow-sm hover:bg-amber-600/90 transition"
                     >
                         <FiUser className="text-lg shrink-0" />
                         Atualizar perfil
@@ -45,7 +45,7 @@ export default function Profile() {
                     <button
                         onClick={() => openModal("senha")}
                         type="button"
-                        className="flex-1 flex items-center justify-center gap-2 bg-amber-600 text-white font-semibold text-sm py-3 px-2 rounded-xl shadow-sm hover:bg-amber-700 transition"
+                        className="flex-1 flex items-center justify-center gap-2 bg-amber-600 text-white font-semibold text-sm py-3 px-2 rounded-xl shadow-sm hover:bg-amber-600/90 transition"
                     >
                         <FiLock className="text-lg shrink-0" />
                         Atualizar Senha

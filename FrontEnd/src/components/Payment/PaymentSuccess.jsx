@@ -66,8 +66,8 @@ export function PaymentSuccess({ orderId, timeStamp, totalValue }) {
             </div>
                 <Link
                 to={"/orders"}
-                className="flex justify-center w-full rounded-xl bg-[#1e3a8a] text-white py-3 font-bold cursor-pointer">
-                    <button >
+                className="flex justify-center w-full rounded-xl bg-[#1e3a8a] text-white py-3 font-bold cursor-pointer hover:opacity-90">
+                    <button>
                         Ver meus pedidos
                     </button>
                 </Link>

@@ -10,7 +10,7 @@ export function ShopItem({ item }) {
 
                 <div className="flex flex-col min-w-0">
                     <h2>{item.name}</h2>
-                    <h3 className="font-bold text-amber-500">{item.value.toLocaleString("pt-BR", {
+                    <h3 className="font-bold text-amber-600">{item.value.toLocaleString("pt-BR", {
                         style: "currency",
                         currency: "BRL",
                     })}
@@ -21,7 +21,7 @@ export function ShopItem({ item }) {
 
             <div className="flex gap-3 justify-center items-center">
                 <button
-                    className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
+                    className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600 hover:opacity-80"
                     onClick={() => changeQuantity(item.id, -1)}
                 >
                     <FiMinus size={15} />
@@ -30,7 +30,7 @@ export function ShopItem({ item }) {
                 <span className="text-xs font-bold">{item.quantity}</span>
 
                 <button
-                    className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
+                    className="flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600 hover:opacity-80"
                     onClick={() => changeQuantity(item.id, 1)}
                 >
                     <FiPlus size={15} />

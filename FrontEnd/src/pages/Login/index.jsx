@@ -57,8 +57,6 @@ export default function Login() {
 
         localStorage.setItem("usuario", JSON.stringify(data.usuario));
 
-        //alert(`Bem-vindo(a), ${data.usuario.nome}!`);
-
         navigate("/");
 
       } catch (err) {
@@ -69,8 +67,6 @@ export default function Login() {
       }
     };
   
-
-
   return (
     <main className="min-h-dvh w-full bg-[#F3F4F6] text-blue-950 flex justify-center items-center px-4 py-8 sm:px-6">
 
@@ -82,7 +78,6 @@ export default function Login() {
         </div>
 
         <form onSubmit={handleSubmit} className="w-full flex flex-col items-center gap-4">
-
 
           <div className="w-full flex flex-col items-center gap-3">
             <Input iconSrc={user}

@@ -14,7 +14,7 @@ export function Product(props) {
     return (
         <article id="product" className="w-full bg-[#F3F4F6] p-2">
 
-            <div className="w-full flex items-center gap-3 border border-[#1E3A8A] bg-white p-2 rounded-2xl">
+            <div className="w-full flex items-center gap-3 border border-[#1E3A8A] bg-white p-2 rounded-2xl  transition-shadow hover:shadow-md">
 
                 <img src={props.image} alt="imagem produto" className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-xl object-cover" />
 
@@ -30,7 +30,7 @@ export function Product(props) {
 
                         <button
                             onClick={() => addToCart(product, props.restaurant)}
-                            className="shrink-0 flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600"
+                            className="shrink-0 flex items-center justify-center w-6 h-6 p-0 text-white rounded-md bg-amber-600 hover:opacity-90"
                         >
                             <FiPlus size={18} />
                         </button>
