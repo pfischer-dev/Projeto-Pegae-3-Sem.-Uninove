@@ -14,6 +14,7 @@ export default function RestaurantPage() {
     const { id } = useParams();
     const restaurant = bdRestaurants.find((item) => String(item.id) === id);
     const [category, setCategory] = useState("all");
+    const [ searchTerm, setSearchTerm ] = useState("");
 
     const products =
         category === "all" ?
@@ -23,6 +24,12 @@ export default function RestaurantPage() {
                 ...restaurant.menu.candys
             ] : restaurant.menu[category] ?? [];
 
+        const filteredProducts = products.filter((product) => 
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );        
+
+    
+            
     return (
         <AppLayout>
             <header className="shrink-0">
@@ -44,6 +51,8 @@ export default function RestaurantPage() {
                             type="text"
                             placeholder="Buscar no Cardápio"
                             name="buscar_menu"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
 
@@ -60,7 +69,7 @@ export default function RestaurantPage() {
             <main className="flex-1 min-h-0 overflow-y-auto bg-[#F3F4F6] pb-8">
                 <div className="w-full flex flex-col pb-8">
 
-                    {products.map((product) => (
+                    {filteredProducts.map((product) => (
                         <Product
                             key={product.id}
                             id={product.id}

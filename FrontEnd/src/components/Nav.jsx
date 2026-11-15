@@ -17,7 +17,7 @@ export function Nav() {
                     <h1 className="text-2xl font-bold">Olá, Gabriel</h1>
                 </div>
                 
-                <div className="w-full max-w-lg">
+                {/* <div className="w-full max-w-lg">
                     <Input 
                     iconSrc={location} 
                     iconAlt="icone localizaçao" 
@@ -35,7 +35,7 @@ export function Nav() {
                     placeholder="Buscar pratos ou Cantinas"
                     name="buscar_restaurant"
                     />
-                </div>
+                </div> */}
             </div>
         </div>
     );

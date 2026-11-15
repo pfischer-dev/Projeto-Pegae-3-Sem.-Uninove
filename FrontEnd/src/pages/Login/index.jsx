@@ -110,12 +110,10 @@ export default function Login() {
           </div>
         </form>
 
-        <Link>
-          <div className="esqueceu_senha w-full text-center">
-            <p>Esqueceu a senha?</p>
-          </div>
-        </Link>
-
+        <div className="esqueceu_senha w-full text-center">
+          <p>Esqueceu a senha?</p>
+        </div>
+        
         <div className="w-full flex flex-col items-center gap-4">
 
           <div className="w-full max-w-[280px] flex flex-wrap items-center justify-center gap-1 border-2 border-blue-950 p-3 rounded-md">
@@ -123,13 +121,13 @@ export default function Login() {
             <p>Não tem conta?</p>
 
             <Link to={'/register'}>
-              <button id="register" className="font-bold cursor-pointer">
+              <button id="register" className="font-bold cursor-pointer opacity-80 hover:text-amber-600">
                 Registrar - se
               </button>
             </Link>
 
           </div>
-          <img src={gmail} alt="logo gmail" className=" w-8 h-8" />
+          <img src={gmail} alt="logo gmail" className=" w-8 h-8 cursor-pointer hover:scale-105 " />
         </div>
       </div>
     </main>
