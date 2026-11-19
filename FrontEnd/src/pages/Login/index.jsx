@@ -99,6 +99,13 @@ export default function Login() {
               onChange={handleChange}
             />
           </div>
+          
+          {/* Validação Senha */}
+          {errorMessage && (
+            <p className="text-red-600 text-sm font-medium text-center">
+              {errorMessage}
+            </p>
+          )}
 
           <div className="w-full flex justify-center">
             <Button_login_register type="submit" buttonText="Entrar" />

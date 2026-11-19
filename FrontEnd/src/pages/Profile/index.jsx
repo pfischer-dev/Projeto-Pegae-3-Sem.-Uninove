@@ -10,7 +10,7 @@ import { useState } from "react";
 
 export default function Profile() {
     const [modalType, setModalType] = useState(null)
-    const [ usuario, setUsuario ] = useState(profile[2]);
+    const [ usuario, setUsuario ] = useState(profile[0]);
 
     function openModal(type) {
         setModalType(type);
