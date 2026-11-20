@@ -14,9 +14,10 @@ export function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Home />} /> 
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} /> 
         <Route path="/restaurant/:id" element={<Restaurant />} />
         {/* <Route path="/produto/:id" element={<ProductDetail />} /> */}
         <Route path="/shopbag" element={<ShopBag />} />

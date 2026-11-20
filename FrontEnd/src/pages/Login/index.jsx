@@ -57,7 +57,7 @@ export default function Login() {
 
         localStorage.setItem("usuario", JSON.stringify(data.usuario));
 
-        navigate("/");
+        navigate("/home");
 
       } catch (err) {
         console.error("Erro no login:", err);
