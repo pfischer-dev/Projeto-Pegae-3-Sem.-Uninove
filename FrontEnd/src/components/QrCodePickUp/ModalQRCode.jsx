@@ -1,9 +1,8 @@
-import qrCode from "../../assets/icons/qrCode_blue.png";
+import qrCode from "../../assets/icons/qrCode_blue7.png";
 import { RiCloseLargeLine } from "react-icons/ri";
 import logoPegae from "../../assets/logoPegae.png";
 
 export function ModalQRCode({ onClose}) {
-    
     
     return (
         <div className="fixed inset-0 z-50 bg-black/50 flex flex-col justify-center items-center">
@@ -33,7 +32,7 @@ export function ModalQRCode({ onClose}) {
                 <img 
                 src={qrCode} 
                 alt="img qr code"
-                className="w-60 h-60"/>
+                className="w-70 h-70"/>
             </div>
         </div>
     )

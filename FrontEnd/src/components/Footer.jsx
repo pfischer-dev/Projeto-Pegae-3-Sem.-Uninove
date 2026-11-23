@@ -1,12 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useOrders } from "../context/OrdersContext";
 
 import home_use from "../assets/icons/home_use.png";
-import homeOver_blue from "../assets/icons/homeOver_blue.png";
 import homeOver_gray_inact from "../assets/icons/homeOver_gray.png";
-import notification_inact from "../assets/icons/notification_inactive.png";
-import notification_signal_active from "../assets/icons/notification_signal_active.png";
-import notification_signal_inact from "../assets/icons/notification_signal_inactive.png";
 import qrCode_active from "../assets/icons/qrCode_blue2.png";
 import qrCode_inact from "../assets/icons/qrCode_white.png";
 import userProfile_active from "../assets/icons/userProfile_active.png";
@@ -16,10 +13,10 @@ import shopBag_active from "../assets/icons/shopBag-blue.png";
 
 export function Footer() {
     const { totalItems } = useCart();
-
+    const { orders } = useOrders();
 
     let navItems = [
-        { id: "homeItem", label: "Home", to: "/", iconActive: home_use, iconInact: homeOver_gray_inact },
+        { id: "homeItem", label: "Home", to: "/home", iconActive: home_use, iconInact: homeOver_gray_inact },
         { id: "myOrders_item", label: "Meus Pedidos", to: "/orders", iconActive: qrCode_active, iconInact: qrCode_inact },
         { id: "shopBag", label: "Sacola", to: "/shopbag", iconActive: shopBag_active, iconInact: shopBag_inact },
         { id: "profile", label: "Perfil", to: "/profile", iconActive: userProfile_active, iconInact: userProfile_inact }
@@ -28,7 +25,21 @@ export function Footer() {
     return (
         <footer className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-white border-t border-gray-200 flex justify-around items-center py-1 px-4 z-50 rounded-t-sm">
             {navItems.map((item) => (
-                <NavLink key={item.id} to={item.to}>
+                <NavLink
+                    key={item.id}
+                    to={item.to}
+                    onClick={(e) => {
+                        if (item.id === "myOrders_item" && orders.length === 0) {
+                            e.preventDefault();
+                        }
+                    }}
+                    className={
+                        item.id === "myOrders_item" && orders.length === 0
+                            ? "opacity-40 cursor-not-allowed"
+                            : ""
+                    }
+                >
+                    
                     {({ isActive }) => (
                         <div className="flex flex-col items-center text-xs p-1">
                             <div className="relative">

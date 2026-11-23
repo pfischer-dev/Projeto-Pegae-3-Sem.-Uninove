@@ -70,7 +70,7 @@ export default function Login() {
   return (
     <main className="min-h-dvh w-full bg-[#F3F4F6] text-blue-950 flex justify-center items-center px-4 py-8 sm:px-6">
 
-      <div className="w-full max-w-md flex flex-col items-center gap-8 bg-[#F3F4F6]">
+      <div className="w-full max-w-md flex flex-col items-center gap-10 bg-[#F3F4F6]">
 
         <div className="flex flex-col justify-center items-center">
           <img src={logoPegae} alt="logo marca da Pegaê" className="w-48 sm:w-52 h-auto" />
@@ -129,7 +129,7 @@ export default function Login() {
             </Link>
 
           </div>
-          <img src={gmail} alt="logo gmail" className=" w-8 h-8 cursor-pointer hover:scale-105 " />
+          <img src={gmail} alt="logo gmail" className=" w-8 h-8" />
         </div>
       </div>
     </main>

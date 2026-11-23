@@ -23,26 +23,17 @@ export function HeaderNav(props) {
                 <h2 className="flex-1 min-w-0 text-center font-bold truncate">
                     {props.name}
                 </h2>
-
-                <Link
-                    to="/" /* mudar depois para a rota de notificacoes */
-                    aria-label="notificaticações"
-                    className="shrink-0">
-                    <button
-                        type="button"
-                        aria-label="Notificações"
-                        className="shrink-0"
-                    >
-                        <MdOutlineDarkMode 
-                            size={22}
-                            className="text-amber-600"
-                            />
-                        {/* <img src={notification_signal_active}
-                            alt="botão notificaçoes"
-                            className="w-6"
-                        /> */}
-                    </button>
-                </Link>
+                <button
+                    type="button"
+                    aria-label="Notificações"
+                    className="shrink-0"
+                >
+                    <MdOutlineDarkMode 
+                        size={22}
+                        className="text-amber-600"
+                        />
+                </button>
+                
             </div>
         </header>
     )

@@ -89,7 +89,7 @@ export default function Register() {
 
   return (
     <div id="container" className="min-h-dvh w-full flex flex-col justify-center items-center gap-6 px-4 py-8 text-[#1E3A8A] bg-[#F3F4F6]">
-      <img className="w-48 sm:w-52 h-auto" src={logoPegae} alt="logo pegae" />
+      <img className="w-48 sm:w-52 h-auto" src={logoPegae} alt="logo pegae" width="208" height="auto" />
 
       <div className="w-full max-w-sm flex flex-col justify-center">
         <button
