@@ -20,7 +20,7 @@ export function OrderDetail({ order, showQRCode = true, showStatus = "Em Preparo
     return (
         <div
             id="order_detail"
-            className="w-full max-w-[360px] min-w-0 flex flex-col items-center gap-2 p-4 border rounded-2xl border-gray-200 shadow-sm bg-white">
+            className="w-full max-w-90 min-w-0 flex flex-col items-center gap-2 p-4 border rounded-2xl border-gray-200 shadow-sm bg-white">
             
             <div className="w-full flex justify-between gap-3 text-[#1e3a8a] border-b border-gray-200">
                 <span>Pedido:</span>

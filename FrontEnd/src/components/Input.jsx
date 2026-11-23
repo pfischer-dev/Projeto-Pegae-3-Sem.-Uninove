@@ -1,6 +1,6 @@
 export function Input(props) {
     return (
-        <div className="w-full max-w-[340px] flex items-center gap-2 bg-white border border-[#1E3A8A] rounded-lg p-1.5">
+        <div className="w-full max-w-85 flex items-center gap-2 bg-white border border-[#1E3A8A] rounded-lg p-1.5">
 
             {props.icon && (
                 <span className="text-[#1E3A8A] text-xl shrink-0">

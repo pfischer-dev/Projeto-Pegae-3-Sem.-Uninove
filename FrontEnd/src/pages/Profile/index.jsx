@@ -31,7 +31,7 @@ export default function Profile() {
                     <Last_Orders />
                 </div>
 
-                <div className="w-full max-w-[360px] flex gap-3 px-2">
+                <div className="w-full max-w-90 flex gap-3 px-2">
                     <button
                         onClick={() => openModal("perfil")}
                         type="button"

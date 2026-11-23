@@ -118,7 +118,7 @@ export default function Login() {
         
         <div className="w-full flex flex-col items-center gap-4">
 
-          <div className="w-full max-w-[280px] flex flex-wrap items-center justify-center gap-1 border-2 border-blue-950 p-3 rounded-md">
+          <div className="w-full max-w-70 flex flex-wrap items-center justify-center gap-1 border-2 border-blue-950 p-3 rounded-md">
 
             <p>Não tem conta?</p>
 
