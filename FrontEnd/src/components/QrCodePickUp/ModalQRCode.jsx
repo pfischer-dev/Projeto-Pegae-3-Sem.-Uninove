@@ -1,4 +1,4 @@
-import qrCode from "../../assets/icons/qrCode_blue7.png";
+import qrCode from "../../assets/icons/qrCode_blue.png";
 import { RiCloseLargeLine } from "react-icons/ri";
 import logoPegae from "../../assets/logoPegae.png";
 
